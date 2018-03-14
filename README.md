@@ -1,12 +1,14 @@
 # Viikon 1 Markdown-treeni
 
 ## Boldaus
-**Näppärää hommaa
+**Näppärää hommaa**
 
 ## Lista
 * Ykköne
 * Kakkone
-  * _Kakkone piste yks_
-  * -Kakkone piste kaks_
+  * Kakkone piste yks
+  * Kakkone piste kaks
+
+_Kursiivi = best !_
 
 
