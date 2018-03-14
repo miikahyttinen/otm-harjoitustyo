@@ -5,6 +5,7 @@
 * [komentorivi.txt](https://github.com/miikahyttinen/otm-harjotustyo/blob/master/laskarit/viikko1/komentorivi.txt)
   * Kakkone piste yks
   * Kakkone piste kaks
+  * Epäsynkassa?
 
 _Kursiivi = best !_
 _Commit sisään_
