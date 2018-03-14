@@ -6,6 +6,7 @@
   * Kakkone piste yks
   * Kakkone piste kaks
   * Epäsynkassa?
+  * Testi toimiiko
 
 _Kursiivi = best !_
 _Commit sisään_
