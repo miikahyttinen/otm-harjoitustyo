@@ -2,7 +2,7 @@ commit 3346eb198babd1ae6952959b0b707552caf3c4e1
 Author: Miika Hyttinen <hyttinenmiika@gmail.com>
 Date:   Wed Mar 14 15:42:40 2018 +0200
 
-    muutoksia tehty
+    muutoksia tehty  ***LOLZ!!***
 
  eka.txt      | 1 +
  kolmas.txt   | 2 ++
