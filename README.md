@@ -1,11 +1,8 @@
 # Viikon 1 Markdown-treeni
 
-## Boldaus
-**Näppärää hommaa**
-
-## Lista
-* Ykköne
-* Kakkone
+## Linkit
+* [gitlog.txt](https://github.com/miikahyttinen/otm-harjotustyo/blob/master/laskarit/viikko1/gitlog.txt)
+* [komentorivi.txt](https://github.com/miikahyttinen/otm-harjotustyo/blob/master/laskarit/viikko1/komentorivi.txt)
   * Kakkone piste yks
   * Kakkone piste kaks
 
