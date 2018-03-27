@@ -10,34 +10,45 @@ public class MaksukorttiTest {
 
     @Before
     public void setUp() {
-        kortti = new Maksukortti(10);
+        kortti = new Maksukortti(1000);
     }
     
+    @Test
     public void saldoOikeinAlussa(){
-        assertEquals("Kortilla on rahaa 10.0 euroa", kortti.toString());
+        assertEquals("saldo: 10.0", kortti.toString());
     }
     
+    @Test
     public void saldonLisaysToimii(){
-        kortti.lataaRahaa(10);
-        assertEquals("Kortilla on rahaa 20.0 euroa", kortti.toString());
+        kortti.lataaRahaa(1000);
+        assertEquals("saldo: 20.0", kortti.toString());
     }
     
+    @Test
     public void saldonOttoToimii(){
-        kortti.otaRahaa(9);
-        assertEquals("Kortilla on rahaa 1.0 euroa", kortti.toString());
+        kortti.otaRahaa(900);
+        assertEquals("saldo: 1.0", kortti.toString());
     }
     
+    @Test
     public void saldoEiMeneNegatiiviseksi(){
-        kortti.otaRahaa(11);
-        assertEquals("Kortilla on rahaa 10.0 euroa", kortti.toString());
+        kortti.otaRahaa(1100);
+        assertEquals("saldo: 10.0", kortti.toString());
     }
     
+    @Test
     public void otaRahaaPalauttaaTrue(){
-        assertEquals(true, kortti.otaRahaa(9));
+        assertEquals(true, kortti.otaRahaa(900));
     }
     
+    @Test
     public void otaRahaaPalauttaaFalse(){
-        assertEquals(true, kortti.otaRahaa(11));
+        assertEquals(false, kortti.otaRahaa(1100));
+    }
+    
+    @Test
+    public void onkoSaldoSama(){
+        assertEquals(1000, kortti.saldo());
     }
     
 
