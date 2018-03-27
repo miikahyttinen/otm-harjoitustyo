@@ -12,7 +12,7 @@ _Kursiivi = best !_
 _Commit sisään_
 
 ## Viikon 2 laskarit sekä harjoitustyö
-* [Test screenshot] (https://github.com/miikahyttinen/otm-harjoitustyo/blob/master/laskarit/viikko2/testikattavuus.png
+* [Test_screenshot] (https://github.com/miikahyttinen/otm-harjoitustyo/blob/master/laskarit/viikko2/testikattavuus.png
 * [Vaatimusmäärittely](https://github.com/miikahyttinen/otm-harjoitustyo/blob/master/harjoitustyo/vaatimusmaarittely.md)
 * [Työaikakirjanpito](https://github.com/miikahyttinen/otm-harjoitustyo/blob/master/harjoitustyo/tyoaikakirjanpito.md)
 
