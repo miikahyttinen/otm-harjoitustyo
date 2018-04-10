@@ -15,7 +15,7 @@ public class MainClass {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        AccountingYear tilikausi = new AccountingYear("Miikan tilikausi");
+        AccountingYear tilikausi = new AccountingYear("Rotsin tilikausi");
         Entry kirjaus1 = new Entry("Testikirjaus", 300, "Income");
         tilikausi.addEntry(kirjaus1);
         Entry kirjaus2 = new Entry("Testikirjaus", -200, "Expense");

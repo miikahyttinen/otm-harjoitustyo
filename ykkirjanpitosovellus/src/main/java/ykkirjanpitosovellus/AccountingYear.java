@@ -45,6 +45,10 @@ public class AccountingYear {
        return this.startdate;
     }
     
+    public Entry getEntry(int i) {
+        return this.entries.get(i-1);
+    }
+    
     public int[] getEndDate() {
        return this.enddate;
     }
