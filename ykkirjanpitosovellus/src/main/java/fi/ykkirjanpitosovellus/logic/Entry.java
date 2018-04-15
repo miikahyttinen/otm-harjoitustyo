@@ -1,9 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package ykkirjanpitosovellus;
+package fi.ykkirjanpitosovellus.logic;
+import java.util.*;
 
 /**
  *
@@ -16,9 +12,11 @@ public class Entry {
     //private String info; // Extra information TODO
     private int amount; //Amount of entry
     private String type; //Type of entry: accounting and taxing terms
+    private int[] date;
 
-    public Entry(String name_user, int amount_user, String type_user) {
+    public Entry(String name_user, int[] date_user, int amount_user, String type_user) {
         this.name = name_user; 
+        this.date = date_user;
         this.amount = amount_user;
         this.type = type_user;
     }
@@ -33,6 +31,11 @@ public class Entry {
         this.name = name_user;
     }
     
+    public void setDate(int[] date_user) {
+        this.date = date_user;
+    }
+    
+    
     public void setAmount(int amount_user) {
         this.amount = amount_user;
     }
@@ -44,6 +47,10 @@ public class Entry {
     
     public int getId(){
         return this.id;
+    }
+    
+    public int[] getDate(){
+        return this.date;
     }
     
     public String getName(){

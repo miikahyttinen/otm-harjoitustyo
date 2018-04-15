@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ykkirjanpitosovellus;
+package fi.ykkirjanpitosovellus.test;
 
+import fi.ykkirjanpitosovellus.logic.AccountingYear;
+import fi.ykkirjanpitosovellus.logic.Entry;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -29,11 +31,14 @@ public class AccountingYearTest {
     @Before
     public void setUp() {
         testyear = new AccountingYear("Testimiehen tilikausi");
-        testentry1 = new Entry("Testikirjaus", 300, "Income");
+        int[] date1 = {1, 2, 2018};
+        testentry1 = new Entry("Testikirjaus", date1, 300, "Income");
         testyear.addEntry(testentry1);
-        testentry2 = new Entry("Testikirjaus", -200, "Expense");
+        int[] date2 = {1, 3, 2018};
+        testentry2 = new Entry("Testikirjaus", date2 , -200, "Expense");
+        int[] date3 = {13, 4, 2018};
         testyear.addEntry(testentry2);
-        testentry3 = new Entry("Testikirjaus", 350, "Rental income");
+        testentry3 = new Entry("Testikirjaus", date3 , 350, "Rental income");
         testyear.addEntry(testentry3);
     }
     
