@@ -44,8 +44,8 @@ public class AccountingInterface extends Application {
         String[] allentries = accountingyeartest.allEntriesToString();
         //Testidata
         
-        
-        showAccountingYear(window, accountingyeartest);
+        Stage open_accountingyear_satge = new Stage();
+        showAccountingYear(open_accountingyear_satge, accountingyeartest);
     }
     
     
