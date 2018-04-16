@@ -14,50 +14,50 @@ public class Entry {
     private String type; //Type of entry: accounting and taxing terms
     private int[] date;
 
-    public Entry(String name_user, int[] date_user, int amount_user, String type_user) {
-        this.name = name_user; 
-        this.date = date_user;
-        this.amount = amount_user;
-        this.type = type_user;
+    public Entry(String name, int[] date, int amount, String type) {
+        this.name = name; 
+        this.date = date;
+        this.amount = amount;
+        this.type = type;
     }
     
     //Setters
     
-    public void setId(int id_user) {
-        this.id = id_user;
+    public void setId(int id) {
+        this.id = id;
     }
     
-    public void setName(String name_user) {
-        this.name = name_user;
+    public void setName(String name) {
+        this.name = name;
     }
     
-    public void setDate(int[] date_user) {
-        this.date = date_user;
+    public void setDate(int[] date) {
+        this.date = date;
     }
     
     
-    public void setAmount(int amount_user) {
-        this.amount = amount_user;
+    public void setAmount(int amount) {
+        this.amount = amount;
     }
     
-    public void setType(String type_user) {
-        this.type = type_user;
+    public void setType(String type) {
+        this.type = type;
     }
   
     
-    public int getId(){
+    public int getId() {
         return this.id;
     }
     
-    public int[] getDate(){
+    public int[] getDate() {
         return this.date;
     }
     
-    public String getName(){
+    public String getName() {
         return this.name;
     }
     
-    public int getAmount(){
+    public int getAmount() {
         return this.amount;
     }
     

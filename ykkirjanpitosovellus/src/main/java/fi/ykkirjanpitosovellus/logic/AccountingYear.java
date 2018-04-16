@@ -11,16 +11,16 @@ public class AccountingYear {
     private int[] enddate = new int[3];
     private ArrayList<Entry> entries = new ArrayList<Entry>();
     
-    public AccountingYear(String name_user) {
-        this.name = name_user;
+    public AccountingYear(String name) {
+        this.name = name;
         
     }
     
 
-    public void addEntry(Entry entry_user) {
-        int id_automatic = this.entries.size()+1;
-        entry_user.setId(id_automatic);
-        entries.add(entry_user);
+    public void addEntry(Entry entry) {
+        int idAutomatic = this.entries.size() + 1;
+        entry.setId(idAutomatic);
+        entries.add(entry);
         
     }
     
@@ -29,15 +29,15 @@ public class AccountingYear {
     }
     
     public void setStartDate(int date []) {
-       this.startdate[0] = date[0]; //Setting DD 
-       this.startdate[1] = date[1]; //Setting MM
-       this.startdate[2] = date[2]; //Setting MM 
+        this.startdate[0] = date[0]; //Setting DD 
+        this.startdate[1] = date[1]; //Setting MM
+        this.startdate[2] = date[2]; //Setting MM 
     }
     
     public void setEndDate(int date []) {
-       this.enddate[0] = date[0]; //Setting DD 
-       this.enddate[1] = date[1]; //Setting MM
-       this.enddate[2] = date[2]; //Setting MM 
+        this.enddate[0] = date[0]; //Setting DD 
+        this.enddate[1] = date[1]; //Setting MM
+        this.enddate[2] = date[2]; //Setting MM 
     }
     
     public String getName() {
@@ -53,7 +53,7 @@ public class AccountingYear {
     }
     
     public Entry getEntry(int i) {
-        return this.entries.get(i-1);
+        return this.entries.get(i - 1);
     }
     
     
@@ -61,27 +61,27 @@ public class AccountingYear {
 
     
     public String[] yearInfoToString() {
-        String[] year_info = new String[7];
-        year_info[0] = this.name;
-        year_info[1] = Integer.toString(this.getStartDate()[0]);
-        year_info[2] = Integer.toString(this.getStartDate()[1]);
-        year_info[3] = Integer.toString(this.getStartDate()[2]);
-        year_info[4] = Integer.toString(this.getEndDate()[0]);
-        year_info[5] = Integer.toString(this.getEndDate()[1]);
-        year_info[6] = Integer.toString(this.getEndDate()[2]);
-        return year_info;
+        String[] yearInfo = new String[7];
+        yearInfo[0] = this.name;
+        yearInfo[1] = Integer.toString(this.getStartDate()[0]);
+        yearInfo[2] = Integer.toString(this.getStartDate()[1]);
+        yearInfo[3] = Integer.toString(this.getStartDate()[2]);
+        yearInfo[4] = Integer.toString(this.getEndDate()[0]);
+        yearInfo[5] = Integer.toString(this.getEndDate()[1]);
+        yearInfo[6] = Integer.toString(this.getEndDate()[2]);
+        return yearInfo;
     }
     
     public String[] allEntriesToString() {
-        String[] all_entries = new String[this.entries.size()];
+        String[] allEntries = new String[this.entries.size()];
         for (Entry e : this.entries) {
-            int id_int = e.getId();
-            String date = Integer.toString(e.getDate()[0])+ "." + Integer.toString(e.getDate()[1]) + "." + Integer.toString(e.getDate()[2]);
-            String id_string = Integer.toString(e.getId());
+            int idInt = e.getId();
+            String date = Integer.toString(e.getDate()[0]) + "." + Integer.toString(e.getDate()[1]) + "." + Integer.toString(e.getDate()[2]);
+            String idString = Integer.toString(e.getId());
             String amount = Integer.toString(e.getAmount());            
-            all_entries[id_int-1] = "ID: " + id_string + "Date: " + date + " Name: " + e.getName() + " Amount: " + amount + " Type: " + e.getType();
-            }
-        return all_entries;
+            allEntries[idInt - 1] = " ID: " + idString + " Pvm: " + date + " Nimi: " + e.getName() + " Määrä: " + amount + " Tyyppi: " + e.getType();
+        }
+        return allEntries;
     }
     
         

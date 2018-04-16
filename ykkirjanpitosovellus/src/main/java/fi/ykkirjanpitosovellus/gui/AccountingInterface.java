@@ -15,56 +15,55 @@ public class AccountingInterface extends Application {
     @Override
     public void start(Stage window) {
         window.setTitle("Yksikertainen kirjanpito-ohjelma");
-        Button create_newaccountingyear_button = new Button("Uusi tilikausi");
+        Button createNewAccountingYearButton = new Button("Uusi tilikausi");
         FlowPane componentgroup = new FlowPane();
-        Button open_exsistingaccountyear_button = new Button("Avaa tilikausi");
-        componentgroup.getChildren().add(create_newaccountingyear_button);
-        componentgroup.getChildren().add(open_exsistingaccountyear_button);   
+        Button openExsistingAccountYearButton = new Button("Avaa tilikausi");
+        componentgroup.getChildren().add(createNewAccountingYearButton);
+        componentgroup.getChildren().add(openExsistingAccountYearButton);   
         Scene startscene = new Scene(componentgroup);
         
         window.setScene(startscene);
         window.show();
         
         //Testidata
-        AccountingYear accountingyeartest = new AccountingYear("Rotsin tilikausi");
+        AccountingYear accountingYearTest = new AccountingYear("Rotsin tilikausi");
         int[] start = {01, 01, 2018};
         int[] end = {01, 12, 2018};
-        accountingyeartest.setStartDate(start);
-        accountingyeartest.setEndDate(end);
+        accountingYearTest.setStartDate(start);
+        accountingYearTest.setEndDate(end);
         int[] date1 = {1, 2, 2018};
-        Entry entry1 = new Entry("Testikirjaus1", date1 , 300, "Income");
-        accountingyeartest.addEntry(entry1);
+        Entry entry1 = new Entry("Testikirjaus1", date1 , 300, "Tulo");
+        accountingYearTest.addEntry(entry1);
         int[] date2 = {3, 2, 2018};
-        Entry entry2 = new Entry("Testikirjaus2", date2 , -200, "Expense");
-        accountingyeartest.addEntry(entry2);
+        Entry entry2 = new Entry("Testikirjaus2", date2 , -200, "Kulu");
+        accountingYearTest.addEntry(entry2);
         int[] date3 = {14, 2, 2018};
-        Entry entry3 = new Entry("Testikirjaus3", date3 , 350, "Rental income");
-        accountingyeartest.addEntry(entry3);
-        String[] yearinfo = accountingyeartest.yearInfoToString();
-        String[] allentries = accountingyeartest.allEntriesToString();
+        Entry entry3 = new Entry("Testikirjaus3", date3 , 350, "Vuokratulo");
+        accountingYearTest.addEntry(entry3);
+        String[] yearInfo = accountingYearTest.yearInfoToString();
+        String[] allEntries = accountingYearTest.allEntriesToString();
         //Testidata
         
-        Stage open_accountingyear_satge = new Stage();
-        showAccountingYear(open_accountingyear_satge, accountingyeartest);
+        Stage openAccountingYearStage = new Stage();
+        showAccountingYear(openAccountingYearStage, accountingYearTest);
     }
     
     
-    public void showAccountingYear (Stage window, AccountingYear user_year) {
+    public void showAccountingYear(Stage window, AccountingYear year) {
 
-        window.setTitle(user_year.getName());
+        window.setTitle(year.getName());
         FlowPane componentgroup = new FlowPane();
-        Button newentry_button = new Button("Uusi kirjaus");
-        componentgroup.getChildren().add(newentry_button);
-        String[] all_entries = user_year.allEntriesToString();
-        for (String s : all_entries) {
+        Button newEntryButton = new Button("Uusi kirjaus");
+        componentgroup.getChildren().add(newEntryButton);
+        String[] allEntries = year.allEntriesToString();
+        for (String s : allEntries) {
             Label label = new Label(s);
             componentgroup.getChildren().add(label);
         }
-        Scene startscene = new Scene(componentgroup);
-        window.setScene(startscene);
+        Scene startScene = new Scene(componentgroup);
+        window.setScene(startScene);
         window.show();
-    }
-        
+    }       
 }
 
         
