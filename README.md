@@ -9,7 +9,7 @@ Harjoitustyö kurssille Ohjelmistotekniikan menetelmät. Sovelluksella voi toteu
 
 * [Arkkitehtuurikuvaus] TODO
 
-* [Työaikakirjanpito](https://github.com/miikahyttinen/otm-harjoitustyo/blob/master/harjoitustyo/tyoaikakirjanpito.md)
+* [Työaikakirjanpito](https://github.com/miikahyttinen/otm-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
 
 ## Komentoriviltä suoritettavat toiminnot
 
