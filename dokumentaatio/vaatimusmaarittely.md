@@ -21,23 +21,21 @@ kirjanpitäjä tulevaisuudessa. Myös Admin on mahdollista lisätä tulevaisuude
 ## Käyttöliittymä
 
 Sovellukseen on tarkoitus tulla:
-* Kirjautumisnäkymä
+* Aloitus-näkymä: valitse uusi tilikausi tai avaa tilikausi tiedostosta
 * Tulojen ja menojen lisäys -näkymä
 * Tulojen ja menojen listaus -näkymä
 * Veroilmoitus -näkymä
 
 ## 0.1 Version tarjoama toiminallisuus
 
-### Ennen kirjautumista
-* käyttäjä voi luoda järjestelmään käyttäjätunnuksen
-* käyttäjä voi kirjautua järjestelmään, jos tunnus olemassa
-
-### Kirjautumisen jälkeen
+### Sovelluksen toiminallisuus
 * käyttäjä voi luoda uuden "tilikauden"
+* käyttäjä voi avata tilikauden tiedostosta
 * käyttäjä voi lisätä tuloja ja menoja
 * käyttäjä voi tarkastella tuloja ja menoja -listaa
 * käyttäjä voi tarkastella veroilmoitukselle meneviä tietoja
 * käyttäjä voi poistaa tuloja ja menoja
+* Käyttäjä voi tallentaa tallentaa tiliakauden tiedostoon
 
 ## Jatkokehitys
 * Matkalaskujen teko
