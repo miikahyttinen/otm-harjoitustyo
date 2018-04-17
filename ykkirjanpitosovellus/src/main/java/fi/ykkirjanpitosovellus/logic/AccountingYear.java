@@ -20,8 +20,7 @@ public class AccountingYear {
     public void addEntry(Entry entry) {
         int idAutomatic = this.entries.size() + 1;
         entry.setId(idAutomatic);
-        entries.add(entry);
-        
+        entries.add(entry);      
     }
     
     public void setName(String name) {

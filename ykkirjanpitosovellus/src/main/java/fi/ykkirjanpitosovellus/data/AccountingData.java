@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package fi.ykkirjanpitosovellus.data;
 
 /**
@@ -10,5 +5,19 @@ package fi.ykkirjanpitosovellus.data;
  * @author yllapitaja
  */
 public class AccountingData {
+    
+    
+    public void  writeCsvFile () {
+        
+    }
+    
+    public void readCsvFile () {
+        
+    }
+    
+    public int[] parseDate(String row) {
+        int[] date = new int[3];
+        return date;
+    }    
     
 }

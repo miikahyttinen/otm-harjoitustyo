@@ -4,7 +4,7 @@
 
 Ohjelman rakenne noudattelee kolmitasoista kerrosarkkitehtuuria, ja koodin pakkausrakenne on seuraava:
 
-<img src="https://github.com/miikahyttinen/otm-harjoitustyo/blob/master/dokumentaatio/pakkausrakenne.png" width="160">
+<img src="https://github.com/miikahyttinen/otm-harjoitustyo/blob/master/dokumentaatio/pakkausrakenne.png" width="500">
 
 Pakkaus _fi.ykkirjanpitohojelma.gui_ sisältää JavaFX:llä toteutetun käyttöliittymän _fi.ykkirjanpitohojelma.logic_ sovelluslogiikan ja _fi.ykkirjanpitohojelma.data_ tietojen tallennuksesta vastaavan koodin.
 
