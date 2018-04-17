@@ -7,7 +7,7 @@ Harjoitustyö kurssille Ohjelmistotekniikan menetelmät. Sovelluksella voi toteu
 
 * [Vaatimusmäärittely](https://github.com/miikahyttinen/otm-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
 
-* [Arkkitehtuurikuvaus] TODO
+* [Arkkitehtuurikuvaus](https://github.com/miikahyttinen/otm-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
 
 * [Työaikakirjanpito](https://github.com/miikahyttinen/otm-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
 
