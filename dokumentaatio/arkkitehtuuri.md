@@ -17,7 +17,7 @@ Käyttöliittymä sisältää seuraavat näkmyät:
 2. Uuden tilikauden luominen ja tallentaminen
 3. Tallennetun tilikauden muokkaaminen ja tallentaminen
 
-jokainen näistä on toteutettu omana [Scene](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/Scene.html)-oliona. Näkymistä yksi kerrallaan on näkyvänä eli sijoitettuna sovelluksen [stageen](https://docs.oracle.com/javase/8/javafx/api/javafx/stage/Stage.html). Käyttöliittymä on rakennettu ohjelmallisesti luokassa [todoapp.ui.TodoUi](https://github.com/mluukkai/OtmTodoApp/blob/master/src/main/java/todoapp/ui/TodoUi.java).
+jokainen näistä on toteutettu omana [Scene](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/Scene.html)-oliona. Useita Scenejä voi olla kerrallaan näkyvänä eli sijoitettuna sovelluksen [stageen](https://docs.oracle.com/javase/8/javafx/api/javafx/stage/Stage.html). 
 
 Käyttöliittymä on pyritty eristämään sovelluslogiikasta. 
 
