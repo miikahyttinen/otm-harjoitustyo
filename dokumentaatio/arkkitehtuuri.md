@@ -8,7 +8,7 @@ Ohjelman rakenne noudattelee kolmitasoista kerrosarkkitehtuuria, ja koodin pakka
 
 Pakkaus _fi.ykkirjanpitohojelma.gui_ sisältää JavaFX:llä toteutetun käyttöliittymän _fi.ykkirjanpitohojelma.logic_ sovelluslogiikan ja _fi.ykkirjanpitohojelma.data_ tietojen tallennuksesta vastaavan koodin.
 
-Pakkaus _fi.ykkirjanpitohojelma.gui_ sisältää luokkia testaavat metodit. 
+Pakkaus _fi.ykkirjanpitohojelma.test_ sisältää luokkia testaavat metodit. 
 
 ## Käyttöliittymä
 
