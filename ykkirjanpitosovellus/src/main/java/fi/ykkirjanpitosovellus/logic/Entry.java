@@ -53,6 +53,14 @@ public class Entry {
         return this.date;
     }
     
+    public String dateToString()  {
+        String dd = Integer.toString(this.date[0]);
+        String mm = Integer.toString(this.date[1]);
+        String yy = Integer.toString(this.date[2]);
+        return dd + "." + mm + "." + yy;
+    }
+            
+    
     public String getName() {
         return this.name;
     }

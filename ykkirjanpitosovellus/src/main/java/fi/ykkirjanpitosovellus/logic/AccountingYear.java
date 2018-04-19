@@ -55,6 +55,10 @@ public class AccountingYear {
         return this.entries.get(i - 1);
     }
     
+    public int getLastId () {
+        return this.entries.size();
+    }
+    
     
     
 
@@ -78,7 +82,7 @@ public class AccountingYear {
             String date = Integer.toString(e.getDate()[0]) + "." + Integer.toString(e.getDate()[1]) + "." + Integer.toString(e.getDate()[2]);
             String idString = Integer.toString(e.getId());
             String amount = Integer.toString(e.getAmount());            
-            allEntries[idInt - 1] = " ID: " + idString + " Pvm: " + date + " Nimi: " + e.getName() + " Määrä: " + amount + " Tyyppi: " + e.getType();
+            allEntries[idInt - 1] = " ID: "  + idString + " Nimi: " + e.getName() +  " Pvm: " + date + " Summa: " + amount + " Tyyppi: " + e.getType();
         }
         return allEntries;
     }

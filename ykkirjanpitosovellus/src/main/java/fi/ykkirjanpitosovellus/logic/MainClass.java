@@ -1,8 +1,11 @@
 package fi.ykkirjanpitosovellus.logic;
-import fi.ykkirjanpitosovellus.gui.AccountingInterface;
+import fi.ykkirjanpitosovellus.data.AccountingData;
 import java.util.*;
 import static javafx.application.Application.launch;
 import javafx.stage.Stage;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 
 public class MainClass {
 
@@ -16,8 +19,29 @@ public class MainClass {
         //System.out.println("End of the year: " + yearinfo[4] + "." + yearinfo[5] + "." + yearinfo[6]);
         //for (String entry : allentries) {
         //    System.out.println(entry);
+        AccountingYear accountingYearTest = new AccountingYear("Rotsin tilikausi");
+        int[] start = {01, 01, 2018};
+        int[] end = {01, 12, 2018};
+        accountingYearTest.setStartDate(start);
+        accountingYearTest.setEndDate(end);
+        int[] date1 = {1, 2, 2018};
+        Entry entry1 = new Entry("Testikirjaus1", date1 , 300, "Tulo");
+        accountingYearTest.addEntry(entry1);
+        int[] date2 = {3, 2, 2018};
+        Entry entry2 = new Entry("Testikirjaus2", date2 , -200, "Kulu");
+        accountingYearTest.addEntry(entry2);
+        int[] date3 = {14, 2, 2018};
+        Entry entry3 = new Entry("Testikirjaus3", date3 , 350, "Vuokratulo");
+        accountingYearTest.addEntry(entry3);
         
-        launch(AccountingInterface.class);
+        AccountingData test = new AccountingData();
+        try {        
+            test.writeCsvFile(accountingYearTest);
+        } catch (FileNotFoundException e) {
+            System.out.println("Virhe!");
+        }
+        
+        //launch(AccountingInterface.class);
 
     }
     
