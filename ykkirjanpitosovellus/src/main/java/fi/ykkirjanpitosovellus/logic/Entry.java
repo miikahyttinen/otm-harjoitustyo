@@ -58,8 +58,8 @@ public class Entry {
         String mm = Integer.toString(this.date[1]);
         String yy = Integer.toString(this.date[2]);
         return dd + "." + mm + "." + yy;
-    }
-            
+    }   
+    
     
     public String getName() {
         return this.name;

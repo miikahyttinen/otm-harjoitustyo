@@ -19,7 +19,7 @@ public class MainClass {
         //System.out.println("End of the year: " + yearinfo[4] + "." + yearinfo[5] + "." + yearinfo[6]);
         //for (String entry : allentries) {
         //    System.out.println(entry);
-        AccountingYear accountingYearTest = new AccountingYear("Rotsin tilikausi");
+        /*AccountingYear accountingYearTest = new AccountingYear("Rotsin tilikausi");
         int[] start = {01, 01, 2018};
         int[] end = {01, 12, 2018};
         accountingYearTest.setStartDate(start);
@@ -34,14 +34,18 @@ public class MainClass {
         Entry entry3 = new Entry("Testikirjaus3", date3 , 350, "Vuokratulo");
         accountingYearTest.addEntry(entry3);
         
-        AccountingData test = new AccountingData();
+        /*AccountingData test = new AccountingData();
         try {        
             test.writeCsvFile(accountingYearTest);
         } catch (FileNotFoundException e) {
             System.out.println("Virhe!");
-        }
+        }*/
         
         //launch(AccountingInterface.class);
+        
+        int[] date = AccountingService.dateToIntArray("13.12.2019");
+        System.out.print(date[2]);
+        
 
     }
     
