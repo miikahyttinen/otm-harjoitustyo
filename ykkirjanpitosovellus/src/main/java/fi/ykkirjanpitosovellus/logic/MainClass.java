@@ -6,6 +6,8 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.io.IOException;
+
 
 public class MainClass {
 
@@ -43,8 +45,17 @@ public class MainClass {
         
         //launch(AccountingInterface.class);
         
-        int[] date = AccountingService.dateToIntArray("13.12.2019");
-        System.out.print(date[2]);
+        try {     
+        AccountingYear year = AccountingData.readCsvFile("test.csv"); 
+        String[] info = year.allEntriesToString();
+        for (String s : info) {
+            System.out.println(s);
+        }
+        } catch (FileNotFoundException e) {
+            System.out.println("Virhe!");
+        } catch (IOException e) {
+            System.out.println("Virhe!");
+        }
         
 
     }

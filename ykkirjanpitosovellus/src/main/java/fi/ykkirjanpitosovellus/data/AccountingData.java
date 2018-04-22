@@ -5,9 +5,8 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.io.IOException;
-import java.util.List;
 import java.util.Scanner;
+import java.io.IOException;
 
 
 
@@ -18,7 +17,7 @@ public class AccountingData {
         
     }
     
-    public void  writeCsvFile(AccountingYear year) throws FileNotFoundException {       
+    public static void  writeCsvFile(AccountingYear year) throws FileNotFoundException {       
         PrintWriter pw = new PrintWriter(new File(year.getName()+".csv"));
         StringBuilder sb = new StringBuilder();
         for (int id = 1; id <= year.getLastId(); id++) {
@@ -41,44 +40,44 @@ public class AccountingData {
     
         
     
-    public AccountingYear ReadCSVWithScanner(String fileName) throws FileNotFoundException {
+    public static AccountingYear readCsvFile(String fileName) throws FileNotFoundException, IOException {
 
-		// open file input stream
+        // open file input stream
 	BufferedReader reader = new BufferedReader(new FileReader(fileName));
-		// read file line by line
+        // read file line by line
 	String line = null;
 	Scanner scanner = null;
 	int index = 0;
 	AccountingYear yearCsv = new AccountingYear(fileName);
-
-	while ((line = reader.readLine()) != null) {
-		Entry entryCsv = new Entry();
+        int[] nullDate = {0, 0, 0};
+        while ((line = reader.readLine()) != null) {
+		Entry entryCsv = new Entry("test", nullDate, 0, "0");
                 scanner = new Scanner(line);
 		scanner.useDelimiter(",");
 		while (scanner.hasNext()) {
 			String data = scanner.next();
-			if (index == 0)
-			emp.setId(Integer.parseInt(data));
-				else if (index == 1)
-                                    emp.setName(data);
-				else if (index == 2)
-                                    emp.setRole(data);
-				else if (index == 3)
-                                    emp.setSalary(data);
-				else
-					System.out.println("invalid data::" + data);
-				index++;
+                        if (index == 0)
+                            entryCsv.setId(Integer.parseInt(data));
+                        else if (index == 1)
+                                    entryCsv.setName(data);
+                        else if (index == 2)
+                                    entryCsv.setDate(dateToIntArray(data));
+                        else if (index == 3)
+                                    entryCsv.setAmount(Integer.parseInt(data));
+                        else if (index == 4)
+                                    entryCsv.setType(data);
+                        else
+                            System.out.println("invalid data::" + data);
+			    index++;
 			}
-			index = 0;
-			empList.add(emp);
-		}
-		
-		//close reader
-		reader.close();
-		
-		System.out.println(empList);
+                    index = 0;
+                    yearCsv.addEntry(entryCsv);
+		}		
+        reader.close();
+        return yearCsv;        
+    }
 
-    public int[] dateToIntArray(String dateString) {
+    public static int[] dateToIntArray(String dateString) {
         int[] dateArray = new int[3];
         String day = new String();
         String month = new String();
