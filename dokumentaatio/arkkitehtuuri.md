@@ -28,9 +28,9 @@ Tilikausi koostuu erilaisista kirjauksista, joilla on rahallinen arvo sekä erin
  
 ## Toiminallisuudet
 
-# Sekvenssikaavio tilikauden avaamisesta csv-tiedostosta
+### Sekvenssikaavio tilikauden avaamisesta csv-tiedostosta
 
-<img src="https://github.com/miikahyttinen/Otm-harjoitustyo-Yksinkertainen-kirjanpitosovellus/blob/master/dokumentaatio/sekvenssikaavio%20open%20accounting%20year.png" width="500">
+<img src="https://github.com/miikahyttinen/Otm-harjoitustyo-Yksinkertainen-kirjanpitosovellus/blob/master/dokumentaatio/sekvenssikaavio%20open%20accounting%20year.png" width="700">
 
 
 ## Tietojen pysyväistallennus
