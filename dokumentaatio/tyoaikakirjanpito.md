@@ -7,6 +7,11 @@ Päivämäärä | Aika(h) | Mitä tehty
 15.4.2018| 5 | Luokkien parantelu, graafisen käyttöliittymän aloitus
 16.4.2018| 2 | Checkstyle käyttöönotto, koodin siistiminen, README.md:n uudistaminen
 17.4.2018| 2 | Tietojen tallnneuksesta vastaavan luokan tekminen aloitettu, Arkkitehtuuri.md laitettu alulle.
-TOTAL    | 15 | Tilanne 17.4.2018 
+19.4.2018| 2 | Csv-filen kirjoittavan metodin toteutus
+22.4.2018| 2 | Csv-filen lukevan metodin toteutus
+24.4.2018| 6 | Tiedoston avaaminen käyttöliittymässä,sekvenssikaavion teko, dokumentaation päivitys
+
+
+TOTAL    | 25 | Tilanne 24.4.2018 
 
  
