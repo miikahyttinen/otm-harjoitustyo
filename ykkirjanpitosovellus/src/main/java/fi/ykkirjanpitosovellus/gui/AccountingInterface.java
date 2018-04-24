@@ -56,8 +56,8 @@ public class AccountingInterface extends Application {
     public void showAccountingYear(Stage window, String file) {
         
         AccountingYear year = new AccountingYear(file);
-        try {
-        year = AccountingData.readCsvFile(file);
+    	try {
+        	year = AccountingData.readCsvFile(file);
         } catch (FileNotFoundException e) {
             System.out.println("Tiedostoa ei löydy");
         } catch (IOException e) {

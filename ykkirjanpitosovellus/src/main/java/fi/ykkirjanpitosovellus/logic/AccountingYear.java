@@ -55,7 +55,7 @@ public class AccountingYear {
         return this.entries.get(id - 1);
     }
     
-    public int getLastId () {
+    public int getLastId() {
         return this.entries.size();
     }
     
@@ -91,9 +91,8 @@ public class AccountingYear {
         int sum = 0;
         for (Entry e : this.entries) {
             sum = sum + e.getAmount();
-            }
+    	}
         return sum;
     }
-    
-        
+            
 }
