@@ -10,8 +10,6 @@ Päivämäärä | Aika(h) | Mitä tehty
 19.4.2018| 2 | Csv-filen kirjoittavan metodin toteutus
 22.4.2018| 2 | Csv-filen lukevan metodin toteutus
 24.4.2018| 6 | Tiedoston avaaminen käyttöliittymässä,sekvenssikaavion teko, dokumentaation päivitys
-
-
-TOTAL    | 25 | Tilanne 24.4.2018 
+__TOTAL__    | 25 | Tilanne 24.4.2018 
 
  

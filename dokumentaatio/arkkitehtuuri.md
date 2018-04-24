@@ -4,8 +4,6 @@
 
 Ohjelman rakenne noudattelee kolmitasoista kerrosarkkitehtuuria, ja koodin pakkausrakenne on seuraava:
 
-<img src="https://github.com/miikahyttinen/otm-harjoitustyo/blob/master/dokumentaatio/pakkausrakenne.png" width="500">
-
 Pakkaus _fi.ykkirjanpitohojelma.gui_ sisältää JavaFX:llä toteutetun käyttöliittymän _fi.ykkirjanpitohojelma.logic_ sovelluslogiikan ja _fi.ykkirjanpitohojelma.data_ tietojen tallennuksesta vastaavan koodin.
 
 Pakkaus _fi.ykkirjanpitohojelma.test_ sisältää luokkia testaavat metodit. 
@@ -30,7 +28,10 @@ Tilikausi koostuu erilaisista kirjauksista, joilla on rahallinen arvo sekä erin
  
 ## Toiminallisuudet
 
-**TODO**
+# Sekvenssikaavio tilikauden avaamisesta csv-tiedostosta
+
+<img src="https://github.com/miikahyttinen/Otm-harjoitustyo-Yksinkertainen-kirjanpitosovellus/blob/master/dokumentaatio/sekvenssikaavio%20open%20accounting%20year.png" width="500">
+
 
 ## Tietojen pysyväistallennus
 
@@ -44,7 +45,7 @@ Luokkaa tallentaa tietoja CSV-formaatissa paikkaan X (TODO)
 Sovellus tallettaa tilikauden seuraavassa formaatissa:
 
 <pre>
-TODO
+esimerkkitiedosto.csv
 </pre>
 
 Kentät on eroteltu pilkuin.
