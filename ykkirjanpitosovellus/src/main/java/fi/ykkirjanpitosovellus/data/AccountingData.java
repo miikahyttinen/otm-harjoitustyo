@@ -22,13 +22,13 @@ public class AccountingData {
         StringBuilder sb = new StringBuilder();
         for (int id = 1; id <= year.getLastId(); id++) {
             sb.append(year.getEntry(id).getId());
-            sb.append(',');
+            sb.append(';');
             sb.append(year.getEntry(id).getName());
-            sb.append(',');
+            sb.append(';');
             sb.append(year.getEntry(id).dateToString());
-            sb.append(',');
+            sb.append(';');
             sb.append(year.getEntry(id).getAmount());
-            sb.append(',');
+            sb.append(';');
             sb.append(year.getEntry(id).getType());
             sb.append('\n');          
         }
@@ -51,7 +51,7 @@ public class AccountingData {
         while ((line = reader.readLine()) != null) {
 		Entry entryCsv = new Entry("test", nullDate, 0, "0");
                 scanner = new Scanner(line);
-		scanner.useDelimiter(",");
+		scanner.useDelimiter(";");
 		while (scanner.hasNext()) {
 			String data = scanner.next();
                         if (index == 0)
