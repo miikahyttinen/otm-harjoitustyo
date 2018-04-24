@@ -66,16 +66,19 @@ public class AccountingInterface extends Application {
         
         
         window.setTitle(year.getName());
-        FlowPane componentgroup = new FlowPane();
+        FlowPane componentsEntry = new FlowPane();
         Button newEntryButton = new Button("Uusi kirjaus");
-        componentgroup.getChildren().add(newEntryButton);
+        componentsEntry.getChildren().add(newEntryButton);
         String[] allEntries = year.allEntriesToString();
         for (String s : allEntries) {
             Label label = new Label(s);
-            componentgroup.getChildren().add(label);
+            componentsEntry.getChildren().add(label);
         }
-        Scene startScene = new Scene(componentgroup);
-        window.setScene(startScene);
+        String sum = "*** " + "Tulos: " + Integer.toString(year.countSumOfTheYear()) + " ***";
+        Label labelSum = new Label(sum);
+        componentsEntry.getChildren().add(labelSum);
+        Scene entryScene = new Scene(componentsEntry);
+        window.setScene(entryScene);
         window.show();
     }       
 }

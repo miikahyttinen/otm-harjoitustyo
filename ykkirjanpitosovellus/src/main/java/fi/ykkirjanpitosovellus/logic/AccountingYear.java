@@ -87,5 +87,13 @@ public class AccountingYear {
         return allEntries;
     }
     
+    public int countSumOfTheYear() {
+        int sum = 0;
+        for (Entry e : this.entries) {
+            sum = sum + e.getAmount();
+            }
+        return sum;
+    }
+    
         
 }
