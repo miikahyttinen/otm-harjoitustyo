@@ -2,17 +2,18 @@ package fi.ykkirjanpitosovellus.test;
 
 import fi.ykkirjanpitosovellus.logic.AccountingYear;
 import fi.ykkirjanpitosovellus.logic.Entry;
+import fi.ykkirjanpitosovellus.data.*;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
-/**
- *
- * @author yllapitaja
- */
+
 public class AccountingYearTest {
     
     AccountingYear testyear;
@@ -54,9 +55,18 @@ public class AccountingYearTest {
         assertEquals(testyear.yearInfoToString(), compare);
     }
 
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
+    @Test
+    public void csvReadWorks() {
+        //Data in test.csv: ID: 1; Name: Testikirjaus; Date: 1.1.2018; Amount: 300; Type: Tulo;
+        AccountingYear testYearCsv = new AccountingYear("Testivuosi");
+        try {
+        testYearCsv = AccountingData.readCsvFile("test.csv");
+        } catch (FileNotFoundException e) {
+            System.out.println("Tiedostoa ei löydy");
+        } catch (IOException e) {
+            System.out.println("IO Exception");
+        }
+        
+        assertEquals(testYearCsv.getEntry(1).getAmount(), 300);
+    }
 }

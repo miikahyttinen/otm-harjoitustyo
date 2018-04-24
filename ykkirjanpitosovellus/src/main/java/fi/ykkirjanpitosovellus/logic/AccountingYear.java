@@ -51,8 +51,8 @@ public class AccountingYear {
         return this.enddate;
     }
     
-    public Entry getEntry(int i) {
-        return this.entries.get(i - 1);
+    public Entry getEntry(int id) {
+        return this.entries.get(id - 1);
     }
     
     public int getLastId () {
