@@ -42,9 +42,7 @@ public class AccountingData {
     
     public static AccountingYear readCsvFile(String fileName) throws FileNotFoundException, IOException {
 
-        // open file input stream
 	BufferedReader reader = new BufferedReader(new FileReader(fileName));
-        // read file line by line
 	String line = null;
 	Scanner scanner = null;
 	int index = 0;
@@ -108,7 +106,5 @@ public class AccountingData {
         dateArray[2] = Integer.parseInt(year);
         return dateArray;
     }                  
-    
-
 }    
 

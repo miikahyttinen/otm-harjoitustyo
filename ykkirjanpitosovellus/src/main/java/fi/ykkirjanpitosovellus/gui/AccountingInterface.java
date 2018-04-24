@@ -1,12 +1,19 @@
 package fi.ykkirjanpitosovellus.gui;
 import fi.ykkirjanpitosovellus.logic.*;
-import java.util.*;
+import fi.ykkirjanpitosovellus.data.*;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
 import javafx.scene.control.Label;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import javafx.stage.FileChooser;
+import java.io.File;
+
 
 
 
@@ -15,42 +22,49 @@ public class AccountingInterface extends Application {
     @Override
     public void start(Stage window) {
         window.setTitle("Yksikertainen kirjanpito-ohjelma");
-        Button createNewAccountingYearButton = new Button("Uusi tilikausi");
+        Button newAccountingYearButton = new Button("Uusi tilikausi");
         FlowPane componentgroup = new FlowPane();
-        Button openExsistingAccountYearButton = new Button("Avaa tilikausi");
-        componentgroup.getChildren().add(createNewAccountingYearButton);
-        componentgroup.getChildren().add(openExsistingAccountYearButton);   
+        Button openAccountYearButton = new Button("Avaa tilikausi");
+        openAccountYearButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                fileChooser(window);
+            }
+        });
+        componentgroup.getChildren().add(newAccountingYearButton);
+        componentgroup.getChildren().add(openAccountYearButton);   
         Scene startscene = new Scene(componentgroup);
         
         window.setScene(startscene);
-        window.show();
+        window.show();       
+
+
+        //Stage openAccountingYearStage = new Stage();
+        //showAccountingYear(openAccountingYearStage, "test.csv");
+    }
+    
+    public void fileChooser(Stage window) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Open Resource File");
+        File selectedFile = fileChooser.showOpenDialog(window);
+        String fileName = selectedFile.toString();
+        showAccountingYear(window, fileName);
         
-        //Testidata
-        AccountingYear accountingYearTest = new AccountingYear("Rotsin tilikausi");
-        int[] start = {01, 01, 2018};
-        int[] end = {01, 12, 2018};
-        accountingYearTest.setStartDate(start);
-        accountingYearTest.setEndDate(end);
-        int[] date1 = {1, 2, 2018};
-        Entry entry1 = new Entry("Testikirjaus1", date1 , 300, "Tulo");
-        accountingYearTest.addEntry(entry1);
-        int[] date2 = {3, 2, 2018};
-        Entry entry2 = new Entry("Testikirjaus2", date2 , -200, "Kulu");
-        accountingYearTest.addEntry(entry2);
-        int[] date3 = {14, 2, 2018};
-        Entry entry3 = new Entry("Testikirjaus3", date3 , 350, "Vuokratulo");
-        accountingYearTest.addEntry(entry3);
-        String[] yearInfo = accountingYearTest.yearInfoToString();
-        String[] allEntries = accountingYearTest.allEntriesToString();
-        //Testidata
-        
-        Stage openAccountingYearStage = new Stage();
-        showAccountingYear(openAccountingYearStage, accountingYearTest);
     }
     
     
-    public void showAccountingYear(Stage window, AccountingYear year) {
-
+    public void showAccountingYear(Stage window, String file) {
+        
+        AccountingYear year = new AccountingYear(file);
+        try {
+        year = AccountingData.readCsvFile(file);
+        } catch (FileNotFoundException e) {
+            System.out.println("Tiedostoa ei löydy");
+        } catch (IOException e) {
+            System.out.println("IO Exception");
+        }
+        
+        
         window.setTitle(year.getName());
         FlowPane componentgroup = new FlowPane();
         Button newEntryButton = new Button("Uusi kirjaus");
