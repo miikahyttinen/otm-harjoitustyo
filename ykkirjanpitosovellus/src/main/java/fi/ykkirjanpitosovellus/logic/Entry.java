@@ -2,9 +2,10 @@ package fi.ykkirjanpitosovellus.logic;
 import java.util.*;
 
 /**
+ *Class constructs an entry with a name, date, amount and type. 
  *
- * @author yllapitaja
  */
+
 public class Entry {
 
     private int id; //Unique id for every entry
@@ -21,7 +22,7 @@ public class Entry {
         this.type = type;
     }
     
-    //Setters
+    //Setters   
     
     public void setId(int id) {
         this.id = id;
@@ -43,7 +44,8 @@ public class Entry {
     public void setType(String type) {
         this.type = type;
     }
-  
+    
+    //Getters
     
     public int getId() {
         return this.id;
@@ -51,15 +53,7 @@ public class Entry {
     
     public int[] getDate() {
         return this.date;
-    }
-    
-    public String dateToString()  {
-        String dd = Integer.toString(this.date[0]);
-        String mm = Integer.toString(this.date[1]);
-        String yy = Integer.toString(this.date[2]);
-        return dd + "." + mm + "." + yy;
-    }   
-    
+    } 
     
     public String getName() {
         return this.name;
@@ -72,6 +66,20 @@ public class Entry {
     public String getType() {
         return this.type;
     }
+    
+    /**
+    *Converts a date of the entry to a string
+    * 
+    *@return Returns the date as a String in a form of DD.MM.YYYY
+    *
+    */
+    
+    public String dateToString()  {
+        String dd = Integer.toString(this.date[0]);
+        String mm = Integer.toString(this.date[1]);
+        String yyyy = Integer.toString(this.date[2]);
+        return dd + "." + mm + "." + yyyy;
+    }   
            
 }
 

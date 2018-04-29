@@ -1,8 +1,8 @@
 package fi.ykkirjanpitosovellus.logic;
 import java.util.*;
 /**
- *
- * @author yllapitaja
+ *Class constructs an accoutning year with a descriptive name.
+ *Only the parameter String name is passed to the constructor. 
  */
 public class AccountingYear {
     
@@ -15,6 +15,13 @@ public class AccountingYear {
         this.name = name;
         
     }
+    
+    /**
+    *Adding an entry to a accountg year. Automatially adds an id for an entry.
+    * 
+    *@param entry An entry to be added to a accounting year
+    *
+    */
     
 
     public void addEntry(Entry entry) {
@@ -50,6 +57,16 @@ public class AccountingYear {
     public int[] getEndDate() {
         return this.enddate;
     }
+
+    /**
+    *Finds an entry by an id number from the accounting year
+    *
+    *@param id id number of the desired entry
+    * 
+    *@return Returns an entry of the corresponding id
+    *
+    */    
+    
     
     public Entry getEntry(int id) {
         return this.entries.get(id - 1);
@@ -59,10 +76,13 @@ public class AccountingYear {
         return this.entries.size();
     }
     
-    
-    
-
-    
+    /**
+    *Converts an integer array dates to string array
+    * 
+    *@return Returns the info, start and end dates and name of an accounting year as String[]
+    *
+    *@see Entry#setId(int) setId
+    */
     public String[] yearInfoToString() {
         String[] yearInfo = new String[7];
         yearInfo[0] = this.name;
@@ -75,6 +95,13 @@ public class AccountingYear {
         return yearInfo;
     }
     
+    /**
+    *Iterates through the ArrayList "entries" and converts those string
+    * 
+    *@return Returns info of all entries of an accounting year as String array 
+    *
+    */
+    
     public String[] allEntriesToString() {
         String[] allEntries = new String[this.entries.size()];
         for (Entry e : this.entries) {
@@ -86,6 +113,13 @@ public class AccountingYear {
         }
         return allEntries;
     }
+    
+    /**
+    *Sums all entries of an accounting year
+    * 
+    *@return Sum of all entries of an accounting year as an integer
+    *
+    */
     
     public int countSumOfTheYear() {
         int sum = 0;

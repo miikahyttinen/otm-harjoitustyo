@@ -18,54 +18,26 @@ public class AccountingData {
     public static String writeNewCsvFile(AccountingYear year) throws FileNotFoundException {       
         PrintWriter pw = new PrintWriter(new File(year.getName() + ".csv"));
         StringBuilder sb = new StringBuilder();
-        for (int id = 1; id <= year.getLastId(); id++) {
-            sb.append(year.getEntry(id).getId());
-            sb.append(';');
-            sb.append(year.getEntry(id).getName());
-            sb.append(';');
-            sb.append(year.getEntry(id).dateToString());
-            sb.append(';');
-            sb.append(year.getEntry(id).getAmount());
-            sb.append(';');
-            sb.append(year.getEntry(id).getType());
-            sb.append('\n');          
-        }
-        pw.write(sb.toString());
+        pw.write(AccountingAlgorithms.csvToString(year));
         pw.close();
-        System.out.println("done!");
         return year.getName() + ".csv";
     }
     
-        public static void  writeExsistingCsvFile(AccountingYear year) throws FileNotFoundException {       
+    public static void  writeExsistingCsvFile(AccountingYear year) throws FileNotFoundException {       
         PrintWriter pw = new PrintWriter(new File(year.getName()));
-        StringBuilder sb = new StringBuilder();
-        for (int id = 1; id <= year.getLastId(); id++) {
-            sb.append(year.getEntry(id).getId());
-            sb.append(';');
-            sb.append(year.getEntry(id).getName());
-            sb.append(';');
-            sb.append(year.getEntry(id).dateToString());
-            sb.append(';');
-            sb.append(year.getEntry(id).getAmount());
-            sb.append(';');
-            sb.append(year.getEntry(id).getType());
-            sb.append('\n');          
-        }
-        pw.write(sb.toString());
+        pw.write(AccountingAlgorithms.csvToString(year));
         pw.close();
-        System.out.println("done!");
-        
     }
     
         
     
     public static AccountingYear readCsvFile(String fileName) throws FileNotFoundException, IOException {
         
-		BufferedReader reader = new BufferedReader(new FileReader(fileName));
-		String line = null;
-		Scanner scanner = null;
-		int index = 0;
-		AccountingYear yearCsv = new AccountingYear(fileName);
+	BufferedReader reader = new BufferedReader(new FileReader(fileName));
+        String line = null;
+        Scanner scanner = null;
+	int index = 0;
+	AccountingYear yearCsv = new AccountingYear(fileName);
         int[] nullDate = {0, 0, 0};
         while ((line = reader.readLine()) != null) {
             Entry entryCsv = new Entry("test", nullDate, 0, "0");
@@ -84,7 +56,7 @@ public class AccountingData {
                 } else if (index == 4) {
                     entryCsv.setType(data);
                 } else {
-                    System.out.println("invalid data::" + data);
+                    System.out.println("invalid data:" + data);
                 }
                 index++;
             }
@@ -97,33 +69,9 @@ public class AccountingData {
 
     public static int[] dateToIntArray(String dateString) {
         int[] dateArray = new int[3];
-        String day = new String();
-        String month = new String();
-        String year = new String();
-        int i = 0;
-        int dotCounter = 0;
-        while (i < dateString.length()) {
-            Character c = dateString.charAt(i);
-            if (Character.isDigit(c) && dotCounter == 0) {
-                day = day + c;
-                i++;
-            }
-            if (Character.isDigit(c) && dotCounter == 1) {
-                month = month + c;
-                i++;
-            } 
-            if (Character.isDigit(c) && dotCounter == 2) {
-                year = year + c;
-                i++;
-            }
-            if (!Character.isDigit(c)) {
-                dotCounter++;
-                i++;
-            }
-        }
-        dateArray[0] = Integer.parseInt(day);
-        dateArray[1] = Integer.parseInt(month);
-        dateArray[2] = Integer.parseInt(year);
+        dateArray[0] = Integer.parseInt(AccountingAlgorithms.parseDate(dateString)[0]);
+        dateArray[1] = Integer.parseInt(AccountingAlgorithms.parseDate(dateString)[1]);
+        dateArray[2] = Integer.parseInt(AccountingAlgorithms.parseDate(dateString)[2]);
         return dateArray;
     }                  
 }    
