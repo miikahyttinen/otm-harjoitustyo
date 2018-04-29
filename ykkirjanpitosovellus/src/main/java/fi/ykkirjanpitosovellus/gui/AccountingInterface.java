@@ -26,6 +26,12 @@ public class AccountingInterface extends Application {
     public void start(Stage window) {
         window.setTitle("Yksikertainen kirjanpito-ohjelma");
         Button newAccountingYearButton = new Button("Uusi tilikausi");
+            newAccountingYearButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                newAccountingYear();
+            }
+        });
         FlowPane componentgroup = new FlowPane();
         Button openAccountYearButton = new Button("Avaa tilikausi");
         openAccountYearButton.setOnAction(new EventHandler<ActionEvent>() {
@@ -48,13 +54,13 @@ public class AccountingInterface extends Application {
         fileChooser.setTitle("Open Resource File");
         File selectedFile = fileChooser.showOpenDialog(window);
         String fileName = selectedFile.toString();
-        showAccountingYear(window, fileName);
+        showAccountingYear(fileName);
         
     }
     
     
-    public void showAccountingYear(Stage window, String file) {
-        
+    public void showAccountingYear(String file) {
+        Stage showYearWindow = new Stage();
         AccountingYear year = new AccountingYear(file);
     	try {
         	year = AccountingData.readCsvFile(file);
@@ -65,13 +71,13 @@ public class AccountingInterface extends Application {
         }
         
         
-        window.setTitle(year.getName());
+        showYearWindow.setTitle(year.getName());
         FlowPane componentsEntry = new FlowPane();
         Button newEntryButton = new Button("Uusi kirjaus");
         newEntryButton.setOnAction(new EventHandler<ActionEvent> () {
             @Override
             public void handle(ActionEvent event) {
-                newEntry(window, file);
+                newEntry(file, showYearWindow);               
             }
         });   
         componentsEntry.getChildren().add(newEntryButton);
@@ -84,12 +90,71 @@ public class AccountingInterface extends Application {
         Label labelSum = new Label(sum);
         componentsEntry.getChildren().add(labelSum);
         Scene entryScene = new Scene(componentsEntry);
-        window.setScene(entryScene);
-        window.show();
+        showYearWindow.setScene(entryScene);
+        showYearWindow.show();
     }
     
-    public void newEntry(Stage window, String file) {
-        window.setTitle("Uusi kirjaus tilikaudelle: " + file);
+    public void newAccountingYear() {       
+        Stage newYearWindow = new Stage();
+        newYearWindow.setTitle("Luo uusi tilikasui");        
+        GridPane newYearComponents = new GridPane();
+        
+        newYearComponents.setAlignment(Pos.BASELINE_LEFT);
+        newYearComponents.setHgap(10);
+        newYearComponents.setVgap(10);
+        newYearComponents.setPadding(new Insets(25, 25, 25, 25));
+        
+        Label labelName = new Label("Tilikauden nimi");
+        Label labelDateStart = new Label("Tilikauden alkamispäivämäärä (muodossa DD.MM.YYYY)");
+        Label labelDateEnd = new Label("Tilikauden päättymispäivä (muodossa DD.MM.YYYY)");
+        
+        TextField nameField = new TextField();
+        TextField dateStartField = new TextField();
+        TextField dateEndField = new TextField();
+        
+        newYearComponents.add(labelName, 0, 1);
+        newYearComponents.add(nameField, 0, 2);
+        
+        newYearComponents.add(labelDateStart, 1, 1);
+        newYearComponents.add(dateStartField, 1, 2);
+        
+        newYearComponents.add(labelDateEnd, 2, 1);
+        newYearComponents.add(dateEndField, 2, 2);
+        
+        Button newYearButton = new Button("Luo uusi tilikausi");
+        newYearComponents.add(newYearButton, 0, 3);
+        newYearButton.setOnAction(new EventHandler<ActionEvent> () {
+            @Override
+            public void handle(ActionEvent event) {
+                String fileName = new String();
+                AccountingYear year = new AccountingYear(nameField.getText());
+                int[] startDate = AccountingData.dateToIntArray(dateStartField.getText());
+                int[] endDate = AccountingData.dateToIntArray(dateEndField.getText());
+                year.setStartDate(startDate);
+                year.setEndDate(endDate);
+                try {
+                fileName = AccountingData.writeNewCsvFile(year); // Returns name of the new file as a string              
+                } catch (FileNotFoundException e) {
+                    System.out.println("Tiedostoa ei löydy");
+                } catch (IOException e) {
+                    System.out.println("IO Exception");
+                }
+                showAccountingYear(fileName);
+                newYearWindow.close();
+            }
+        }); 
+        
+        Scene newYearScene = new Scene(newYearComponents);
+        newYearWindow.setScene(newYearScene);
+        
+        newYearWindow.show();
+        
+        
+    }
+    
+    public void newEntry(String file, Stage showYearWindow) {
+        Stage newEntryWindow = new Stage();
+        newEntryWindow.setTitle("Uusi kirjaus tilikaudelle: " + file);
         
         GridPane newEntryComponents = new GridPane();
         newEntryComponents.setAlignment(Pos.BASELINE_LEFT);
@@ -146,15 +211,17 @@ public class AccountingInterface extends Application {
                 } catch (IOException e) {
                     System.out.println("IO Exception");
                 }
-                showAccountingYear(window, file);
+                showAccountingYear(file);
+                newEntryWindow.close();
+                showYearWindow.close();
             }
         });               
         
         
         Scene newEntryScene = new Scene(newEntryComponents);
-        window.setScene(newEntryScene);
+        newEntryWindow.setScene(newEntryScene);
         
-        window.show();
+        newEntryWindow.show();
     }
 }
 

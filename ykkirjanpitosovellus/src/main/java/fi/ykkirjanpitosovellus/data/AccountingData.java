@@ -15,7 +15,7 @@ public class AccountingData {
         
     }
     
-    public static void  writeNewCsvFile(AccountingYear year) throws FileNotFoundException {       
+    public static String writeNewCsvFile(AccountingYear year) throws FileNotFoundException {       
         PrintWriter pw = new PrintWriter(new File(year.getName() + ".csv"));
         StringBuilder sb = new StringBuilder();
         for (int id = 1; id <= year.getLastId(); id++) {
@@ -33,7 +33,7 @@ public class AccountingData {
         pw.write(sb.toString());
         pw.close();
         System.out.println("done!");
-        
+        return year.getName() + ".csv";
     }
     
         public static void  writeExsistingCsvFile(AccountingYear year) throws FileNotFoundException {       
