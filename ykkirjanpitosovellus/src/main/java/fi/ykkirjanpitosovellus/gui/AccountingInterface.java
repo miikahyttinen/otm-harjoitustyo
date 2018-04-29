@@ -13,7 +13,10 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import javafx.stage.FileChooser;
 import java.io.File;
-
+import javafx.scene.control.TextField;
+import javafx.scene.layout.GridPane;
+import javafx.geometry.Pos;
+import javafx.geometry.Insets;
 
 
 
@@ -38,9 +41,6 @@ public class AccountingInterface extends Application {
         window.setScene(startscene);
         window.show();       
 
-
-        //Stage openAccountingYearStage = new Stage();
-        //showAccountingYear(openAccountingYearStage, "test.csv");
     }
     
     public void fileChooser(Stage window) {
@@ -68,6 +68,12 @@ public class AccountingInterface extends Application {
         window.setTitle(year.getName());
         FlowPane componentsEntry = new FlowPane();
         Button newEntryButton = new Button("Uusi kirjaus");
+        newEntryButton.setOnAction(new EventHandler<ActionEvent> () {
+            @Override
+            public void handle(ActionEvent event) {
+                newEntry(window, file);
+            }
+        });   
         componentsEntry.getChildren().add(newEntryButton);
         String[] allEntries = year.allEntriesToString();
         for (String s : allEntries) {
@@ -80,7 +86,76 @@ public class AccountingInterface extends Application {
         Scene entryScene = new Scene(componentsEntry);
         window.setScene(entryScene);
         window.show();
-    }       
+    }
+    
+    public void newEntry(Stage window, String file) {
+        window.setTitle("Uusi kirjaus tilikaudelle: " + file);
+        
+        GridPane newEntryComponents = new GridPane();
+        newEntryComponents.setAlignment(Pos.BASELINE_LEFT);
+        newEntryComponents.setHgap(10);
+        newEntryComponents.setVgap(10);
+        newEntryComponents.setPadding(new Insets(25, 25, 25, 25));
+        
+        Label labelName = new Label("Kirjauksen kuvaus");
+        Label labelDate = new Label("Anna päivämäärä muodossa DD.MM.YYYY");
+        Label labelAmount = new Label("Summa");
+        Label labelType = new Label("Kirjauksen tyyppi");
+        
+        
+        TextField nameField = new TextField();
+        TextField dateField = new TextField();
+        TextField amountField = new TextField();
+        TextField typeField = new TextField();
+           
+        newEntryComponents.add(labelName, 0, 1);
+        newEntryComponents.add(nameField, 0, 2);
+        
+        newEntryComponents.add(labelDate, 1, 1);
+        newEntryComponents.add(dateField, 1, 2);
+        
+        newEntryComponents.add(labelAmount, 2, 1);
+        newEntryComponents.add(amountField, 2, 2);
+        
+        newEntryComponents.add(labelType, 3, 1);
+        newEntryComponents.add(typeField, 3, 2);
+
+        Button addEntryButton = new Button("Lisää kirjaus");
+        newEntryComponents.add(addEntryButton, 4, 2);
+        addEntryButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                AccountingYear year = new AccountingYear(file);
+                try {
+        	year = AccountingData.readCsvFile(file);
+                } catch (FileNotFoundException e) {
+                    System.out.println("Tiedostoa ei löydy");
+                } catch (IOException e) {
+                    System.out.println("IO Exception");
+                }
+                String entryName = nameField.getText();
+                int[] entryDate = AccountingData.dateToIntArray(dateField.getText());
+                int entryAmount = Integer.parseInt(amountField.getText());
+                String entryType = typeField.getText();
+                Entry newEntry = new Entry(entryName, entryDate, entryAmount, entryType);
+                year.addEntry(newEntry);
+                try {
+        	AccountingData.writeExsistingCsvFile(year);
+                } catch (FileNotFoundException e) {
+                    System.out.println("Tiedostoa ei löydy");
+                } catch (IOException e) {
+                    System.out.println("IO Exception");
+                }
+                showAccountingYear(window, file);
+            }
+        });               
+        
+        
+        Scene newEntryScene = new Scene(newEntryComponents);
+        window.setScene(newEntryScene);
+        
+        window.show();
+    }
 }
 
         
