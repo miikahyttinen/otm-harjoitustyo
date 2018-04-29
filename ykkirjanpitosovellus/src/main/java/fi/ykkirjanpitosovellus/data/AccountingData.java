@@ -7,13 +7,23 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.Scanner;
 import java.io.IOException;
-
+/**
+ *Class writes and reads accounting data from and to CSV-files.
+ *
+ */
 
 public class AccountingData {
     
     public AccountingData() {
         
     }
+    /**
+    *Method creates and writes a new CSV-file.
+    *
+    *@param year AccountingYear named with user's input when creating a new accounting year. 
+    * 
+    * @return Returns name of the file.
+    */
     
     public static String writeNewCsvFile(AccountingYear year) throws FileNotFoundException {       
         PrintWriter pw = new PrintWriter(new File(year.getName() + ".csv"));
@@ -23,14 +33,24 @@ public class AccountingData {
         return year.getName() + ".csv";
     }
     
+    /**
+    *Method writes to an exsisitng CSV-file.
+    *
+    *@param year AccountingYear which is under processing f.ex. when adding a new entry. 
+    */
+    
     public static void  writeExsistingCsvFile(AccountingYear year) throws FileNotFoundException {       
         PrintWriter pw = new PrintWriter(new File(year.getName()));
         pw.write(AccountingAlgorithms.csvToString(year));
         pw.close();
     }
     
-        
-    
+    /**
+    *Method reads data from an exsisitng CSV-file.
+    *
+    *@param fileName Name of the CSV-file which user chooses with a file chooser(GUI).
+    */
+            
     public static AccountingYear readCsvFile(String fileName) throws FileNotFoundException, IOException {
         
 	BufferedReader reader = new BufferedReader(new FileReader(fileName));
@@ -66,7 +86,16 @@ public class AccountingData {
         reader.close();
         return yearCsv;        
     }
+    
+    /**
+    *Method converts string to 
+    *
+    *@param dateString Name of the CSV-file which user chooses with a file chooser(GUI).
+    * 
+    *
+    */
 
+    //Kirjoita javadoc lopouun
     public static int[] dateToIntArray(String dateString) {
         int[] dateArray = new int[3];
         dateArray[0] = Integer.parseInt(AccountingAlgorithms.parseDate(dateString)[0]);
