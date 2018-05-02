@@ -17,6 +17,7 @@ import java.io.IOException;
 public class AccountingYearTest {
     
     AccountingYear testyear;
+    AccountingYear testyear2;
     Entry testentry1;
     Entry testentry2;
     Entry testentry3;
@@ -40,6 +41,9 @@ public class AccountingYearTest {
         testyear.addEntry(testentry2);
         testentry3 = new Entry("Testikirjaus", date3 , 350, "Rental income");
         testyear.addEntry(testentry3);
+        testyear2 = new AccountingYear("Testimiehen tilikausi");
+        testyear2.addEntry(testentry1);
+;
     }
     
     @Test
@@ -68,5 +72,11 @@ public class AccountingYearTest {
         }
         
         assertEquals(testYearCsv.getEntry(1).getAmount(), 300);
+    }
+        @Test
+    public void allEntriesToStringWorks() {
+        String test2 = " ID: "  + "1" + " Nimi: " + "Testikirjaus" +
+        " Pvm: " + "1.2.2018" + " Summa: " + "300" + " Tyyppi: " + "Income";
+        assertEquals(test2, testyear2.allEntriesToString()[0]);
     }
 }

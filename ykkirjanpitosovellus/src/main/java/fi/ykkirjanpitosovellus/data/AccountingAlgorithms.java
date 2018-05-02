@@ -2,7 +2,7 @@ package fi.ykkirjanpitosovellus.data;
 import java.io.BufferedReader;
 import fi.ykkirjanpitosovellus.logic.*;
 /**
- *In this calss, some of the algorithms, which are needed in processing of data, are implemented.
+ *In this calss, some of the algorithms which are needed in the processing of data, are implemented.
  *
  */
 public class AccountingAlgorithms {
@@ -36,7 +36,7 @@ public class AccountingAlgorithms {
     }
     
     /**
-    *This algorithm will convert user input into a string array where day, month and year is seperated.
+    *This method/algorithm will convert user input into a string array where day, month and year is seperated.
     *
     *@param dateString Input from the user as DD.MM.YYYY. Also form D.M.YYYY works also and different different delimters.
     * 

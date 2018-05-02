@@ -2,7 +2,7 @@ package fi.ykkirjanpitosovellus.logic;
 import java.util.*;
 /**
  *Class constructs an accoutning year with a descriptive name.
- *Only the parameter String name is passed to the constructor. 
+ *
  */
 public class AccountingYear {
     
