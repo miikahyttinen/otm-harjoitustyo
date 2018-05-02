@@ -53,11 +53,11 @@ public class AccountingData {
             
     public static AccountingYear readCsvFile(String fileName) throws FileNotFoundException, IOException {
         
-	BufferedReader reader = new BufferedReader(new FileReader(fileName));
+		BufferedReader reader = new BufferedReader(new FileReader(fileName));
         String line = null;
         Scanner scanner = null;
-	int index = 0;
-	AccountingYear yearCsv = new AccountingYear(fileName);
+		int index = 0;
+		AccountingYear yearCsv = new AccountingYear(fileName);
         int[] nullDate = {0, 0, 0};
         while ((line = reader.readLine()) != null) {
             Entry entryCsv = new Entry("test", nullDate, 0, "0");

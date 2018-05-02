@@ -18,7 +18,7 @@ public class AccountingAlgorithms {
  *@return Method returns all the data of an accouting year as one long string with delimter ";". Rows are marked with "\n".
  */
     
-    public static String csvToString (AccountingYear year) {
+    public static String csvToString(AccountingYear year) {
         StringBuilder sb = new StringBuilder();
         for (int id = 1; id <= year.getLastId(); id++) {
             sb.append(year.getEntry(id).getId());
@@ -32,7 +32,7 @@ public class AccountingAlgorithms {
             sb.append(year.getEntry(id).getType());
             sb.append('\n');          
         }
-    return sb.toString();
+    	return sb.toString();
     }
     
     /**
@@ -43,7 +43,7 @@ public class AccountingAlgorithms {
     *@return Method return a string array where date, month and year is seperated.
     */
     
-    public static String[] parseDate (String dateString) {
+    public static String[] parseDate(String dateString) {
         String day = new String();
         String month = new String();
         String year = new String();

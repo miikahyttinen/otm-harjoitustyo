@@ -26,7 +26,7 @@ public class AccountingInterface extends Application {
     public void start(Stage window) {
         window.setTitle("Yksikertainen kirjanpito-ohjelma");
         Button newAccountingYearButton = new Button("Uusi tilikausi");
-            newAccountingYearButton.setOnAction(new EventHandler<ActionEvent>() {
+        newAccountingYearButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 newAccountingYear();
@@ -69,12 +69,10 @@ public class AccountingInterface extends Application {
         } catch (IOException e) {
             System.out.println("IO Exception");
         }
-        
-        
-        showYearWindow.setTitle(year.getName());
+		showYearWindow.setTitle(year.getName());
         FlowPane componentsEntry = new FlowPane();
         Button newEntryButton = new Button("Uusi kirjaus");
-        newEntryButton.setOnAction(new EventHandler<ActionEvent> () {
+        newEntryButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 newEntry(file, showYearWindow);               
@@ -123,7 +121,7 @@ public class AccountingInterface extends Application {
         
         Button newYearButton = new Button("Luo uusi tilikausi");
         newYearComponents.add(newYearButton, 0, 3);
-        newYearButton.setOnAction(new EventHandler<ActionEvent> () {
+        newYearButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 String fileName = new String();
@@ -132,8 +130,8 @@ public class AccountingInterface extends Application {
                 int[] endDate = AccountingData.dateToIntArray(dateEndField.getText());
                 year.setStartDate(startDate);
                 year.setEndDate(endDate);
-                try {
-                fileName = AccountingData.writeNewCsvFile(year); // Returns name of the new file as a string              
+            	try {
+                	fileName = AccountingData.writeNewCsvFile(year); // Returns name of the new file as a string              
                 } catch (FileNotFoundException e) {
                     System.out.println("Tiedostoa ei löydy");
                 } catch (IOException e) {
@@ -192,7 +190,7 @@ public class AccountingInterface extends Application {
             public void handle(ActionEvent event) {
                 AccountingYear year = new AccountingYear(file);
                 try {
-        	year = AccountingData.readCsvFile(file);
+        			year = AccountingData.readCsvFile(file);
                 } catch (FileNotFoundException e) {
                     System.out.println("Tiedostoa ei löydy");
                 } catch (IOException e) {
@@ -205,7 +203,7 @@ public class AccountingInterface extends Application {
                 Entry newEntry = new Entry(entryName, entryDate, entryAmount, entryType);
                 year.addEntry(newEntry);
                 try {
-        	AccountingData.writeExsistingCsvFile(year);
+        			AccountingData.writeExsistingCsvFile(year);
                 } catch (FileNotFoundException e) {
                     System.out.println("Tiedostoa ei löydy");
                 } catch (IOException e) {
