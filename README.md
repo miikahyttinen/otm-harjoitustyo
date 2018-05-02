@@ -9,7 +9,11 @@ Harjoitustyö kurssille Ohjelmistotekniikan menetelmät. Sovelluksella voi toteu
 
 * [Arkkitehtuurikuvaus](https://github.com/miikahyttinen/otm-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
 
+* [Käyttöohje](https://github.com/miikahyttinen/Otm-harjoitustyo-Yksinkertainen-kirjanpitosovellus/blob/master/dokumentaatio/kayttoohje.md)
+
+
 * [Työaikakirjanpito](https://github.com/miikahyttinen/otm-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
+
 
 ## Komentoriviltä suoritettavat toiminnot
 
