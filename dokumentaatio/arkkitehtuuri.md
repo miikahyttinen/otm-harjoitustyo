@@ -37,10 +37,12 @@ Tilikausi koostuu erilaisista kirjauksista, joilla on rahallinen arvo sekä erin
 
 Pakkauksen _fi.ykkirjanpitohojelma.data_ luokka **AccountingData** huolehtii tietojen tallettamisesta tiedostoihin.
 
+Luokassa AccountingAlgorithms on toteutettu tietojen lukemiseen ja tallentamiseen liittyviä metodeja. 
+
 
 ### Tiedostot
 
-Luokkaa tallentaa tietoja CSV-formaatissa paikkaan X (TODO)
+Luokkaa tallentaa tietoja CSV-formaatissa paikkaan sovelluksen käynnistyshakemistoon.
 
 Sovellus tallettaa tilikauden seuraavassa formaatissa:
 
@@ -48,9 +50,11 @@ Sovellus tallettaa tilikauden seuraavassa formaatissa:
 esimerkkitiedosto.csv
 </pre>
 
-Kentät on eroteltu puolipisten.
+Data on eroteltu puolipisten järjetyksessä ID;Nimi;Summa;Pvm;Tyyppi
 
-### Päätoiminnallisuudet
+<pre>
+1;Esimerkki;300;1.5.2018;Myyntitulo
+</pre>
 
-TODO
+
 
