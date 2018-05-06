@@ -122,12 +122,28 @@ public class AccountingInterface extends Application {
         Button newYearButton = new Button("Luo uusi tilikausi");
         newYearComponents.add(newYearButton, 0, 3);
         newYearButton.setOnAction(new EventHandler<ActionEvent>() {
+            
             @Override
             public void handle(ActionEvent event) {
-                String fileName = new String();
-                AccountingYear year = new AccountingYear(nameField.getText());
-                int[] startDate = AccountingData.dateToIntArray(dateStartField.getText());
-                int[] endDate = AccountingData.dateToIntArray(dateEndField.getText());
+                String fileName = nameField.getText();
+                try {
+                    AccountingValidators.validateStringName(fileName);  
+                } catch (IllegalArgumentException e) {
+                    UserInputErrors.userInputError(e);
+                }
+                AccountingYear year = new AccountingYear(fileName);
+                
+                String dateStart = dateStartField.getText();
+                String dateEnd = dateEndField.getText();
+                try {
+                    AccountingValidators.validateStringDate(dateStart);
+                    AccountingValidators.validateStringDate(dateStart);
+                } catch (IllegalArgumentException e) {
+                    UserInputErrors.userInputError(e);
+                }
+                
+                int[] startDate = AccountingData.dateToIntArray(dateStart);
+                int[] endDate = AccountingData.dateToIntArray(dateEnd);
                 year.setStartDate(startDate);
                 year.setEndDate(endDate);
             	try {
@@ -186,6 +202,7 @@ public class AccountingInterface extends Application {
         Button addEntryButton = new Button("Lisää kirjaus");
         newEntryComponents.add(addEntryButton, 4, 2);
         addEntryButton.setOnAction(new EventHandler<ActionEvent>() {
+            
             @Override
             public void handle(ActionEvent event) {
                 AccountingYear year = new AccountingYear(file);
@@ -197,7 +214,16 @@ public class AccountingInterface extends Application {
                     System.out.println("IO Exception");
                 }
                 String entryName = nameField.getText();
-                int[] entryDate = AccountingData.dateToIntArray(dateField.getText());
+                
+                String entryStringDate = dateField.getText();                
+                
+                try {
+                AccountingValidators.validateStringDate(entryStringDate);
+                } catch (IllegalArgumentException e) {
+                    UserInputErrors.userInputError(e);
+                }
+                        
+                int[] entryDate = AccountingData.dateToIntArray(entryStringDate);
                 int entryAmount = Integer.parseInt(amountField.getText());
                 String entryType = typeField.getText();
                 Entry newEntry = new Entry(entryName, entryDate, entryAmount, entryType);

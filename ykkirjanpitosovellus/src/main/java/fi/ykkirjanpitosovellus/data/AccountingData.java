@@ -22,7 +22,7 @@ public class AccountingData {
     *
     *@param year AccountingYear named with user's input when creating a new accounting year. 
     * 
-    * @return Returns name of the file.
+    *@return Returns name of the file.
     */
     
     public static String writeNewCsvFile(AccountingYear year) throws FileNotFoundException {       
@@ -49,11 +49,13 @@ public class AccountingData {
     *Method reads data from an exsisitng CSV-file.
     *
     *@param fileName Name of the CSV-file which user chooses with a file chooser(GUI).
+    * 
+    *@return AccountingYear readed from CSV-file.  
     */
             
     public static AccountingYear readCsvFile(String fileName) throws FileNotFoundException, IOException {
         
-		BufferedReader reader = new BufferedReader(new FileReader(fileName));
+	BufferedReader reader = new BufferedReader(new FileReader(fileName));
         String line = null;
         Scanner scanner = null;
 		int index = 0;
@@ -88,11 +90,11 @@ public class AccountingData {
     }
     
     /**
-    *Method converts string to 
+    *Method converts a string to an int array where [0] = date, [1] = month, [2] = year.
     *
-    *@param dateString Name of the CSV-file which user chooses with a file chooser(GUI).
+    *@param dateString users input in form DD.MM.YYYY.
     * 
-    *
+    *@return dateArray int array where [0] = date, [1] = month, [2] = year.
     */
 
     //Kirjoita javadoc lopouun
