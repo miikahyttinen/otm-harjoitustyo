@@ -127,19 +127,31 @@ public class AccountingInterface extends Application {
             public void handle(ActionEvent event) {
                 String fileName = nameField.getText();
                 try {
-                    AccountingValidators.validateStringName(fileName);  
+                    AccountingValidators.validateStringName(fileName);
                 } catch (IllegalArgumentException e) {
                     UserInputErrors.userInputError(e);
                 }
+                
                 AccountingYear year = new AccountingYear(fileName);
                 
                 String dateStart = dateStartField.getText();
                 String dateEnd = dateEndField.getText();
                 try {
                     AccountingValidators.validateStringDate(dateStart);
-                    AccountingValidators.validateStringDate(dateStart);
                 } catch (IllegalArgumentException e) {
                     UserInputErrors.userInputError(e);
+                    newYearWindow.close();
+                    newAccountingYear();
+                    return;
+                }
+                
+                try {
+                    AccountingValidators.validateStringDate(dateEnd);
+                } catch (IllegalArgumentException e) {
+                    UserInputErrors.userInputError(e);
+                    newAccountingYear();
+                    newAccountingYear();
+                    return;
                 }
                 
                 int[] startDate = AccountingData.dateToIntArray(dateStart);
@@ -213,12 +225,11 @@ public class AccountingInterface extends Application {
                 } catch (IOException e) {
                     System.out.println("IO Exception");
                 }
-                String entryName = nameField.getText();
-                
+                String entryName = nameField.getText();                          
                 String entryStringDate = dateField.getText();                
                 
                 try {
-                AccountingValidators.validateStringDate(entryStringDate);
+                    AccountingValidators.validateStringDate(entryStringDate);
                 } catch (IllegalArgumentException e) {
                     UserInputErrors.userInputError(e);
                 }

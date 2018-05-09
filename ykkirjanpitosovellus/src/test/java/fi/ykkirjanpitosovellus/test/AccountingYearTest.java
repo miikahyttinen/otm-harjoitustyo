@@ -3,6 +3,7 @@ package fi.ykkirjanpitosovellus.test;
 import fi.ykkirjanpitosovellus.logic.AccountingYear;
 import fi.ykkirjanpitosovellus.logic.Entry;
 import fi.ykkirjanpitosovellus.data.*;
+import fi.ykkirjanpitosovellus.logic.AccountingValidators;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -78,5 +79,12 @@ public class AccountingYearTest {
         String test2 = " ID: "  + "1" + " Nimi: " + "Testikirjaus" +
         " Pvm: " + "1.2.2018" + " Summa: " + "300" + " Tyyppi: " + "Income";
         assertEquals(test2, testyear2.allEntriesToString()[0]);
+    }
+    
+    @Test
+    public void validateStringDateWorks() {
+        String date = "12.02.2018";
+        boolean result = AccountingValidators.validateStringDate(date);
+        assertEquals(true, result);
     }
 }

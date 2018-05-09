@@ -24,16 +24,27 @@ public class AccountingValidators {
  */
     
     public static boolean validateStringDate(String date) throws IllegalArgumentException {
-        if (date.length() > 10 || date.length() < 8) {
-            throw new IllegalArgumentException("Anna päivämäärä muodossa DD.YY.MMMM");
-        }
-        for (char  c : date.toCharArray()) {            
-            if (!(Character.isDigit(c) || c == '/' || c == '.' || c == ',')) {
-            throw new IllegalArgumentException("Anna päivämäärä muodossa DD.YY.MMMM");
+        if (date.length() != 10) {
+            throw new IllegalArgumentException("Anna päivämäärä muodossa DD.MM.YYYY");
+            }
+        for(int i = 0; i<date.length(); i++) 
+            if(i == 2 || i == 4) {
+                if (date.charAt(i) != '.') {
+                    throw new IllegalArgumentException("Anna päivämäärä muodossa DD.MM.YYYY");
+                }
+            } else {
+               if (!Character.isDigit(date.charAt(i))) {
+                    throw new IllegalArgumentException("Anna päivämäärä muodossa DD.MM.YYYY"); 
+               }
+            }
+        for (char c : date.toCharArray())   {
+            if (!Character.isDigit(c) && c != '.') {
+                throw new IllegalArgumentException("Anna päivämäärä muodossa DD.MM.YYYY");           
             }
         }
-        return true;
-    }
+        return true;  
+        }
+
     
     public static boolean validateStringName(String name) throws IllegalArgumentException {
         if(name.length() > 50) {
