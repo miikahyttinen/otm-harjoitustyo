@@ -12,6 +12,8 @@ Päivämäärä | Aika(h) | Mitä tehty
 24.4.2018| 6 | Tiedoston avaaminen käyttöliittymässä,sekvenssikaavion teko, dokumentaation päivitys
 29.4.2018| 6 | Uuden kirjauksen käyttöliittymän toteuttaminen
 2.5.2018| 3 | Käyttöohjeen teko, testien lisäys, repon päivitys
-__TOTAL__ | 34 | Tilanne 2.5.2018 
+10.5.2018| 5 | Kirjauksen poistamisen toteutus, bugien korjaus, validaattorien teko
+10.5.2018| 5 | Loppupalautuksen viimeistely, dokumentaation viimeistely
+__TOTAL__ | 44 | Tilanne 11.5.2018 
 
  
