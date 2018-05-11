@@ -1,10 +1,10 @@
 # Käyttöohje 
 
-Lataa tiedosto sekä mallidata jos haluat [ykkirjanpitosovellus-1.0-SNAPSHOT.jar](https://github.com/miikahyttinen/Otm-harjoitustyo-Yksinkertainen-kirjanpitosovellus/releases/tag/viikko6) PÄIVITÄ VIELÄ VIAK RELEASE
+Lataa tiedosto sekä mallidata jos haluat [ykkirjanpitosovellus-1.0-SNAPSHOT.jar](https://github.com/miikahyttinen/Otm-harjoitustyo-Yksinkertainen-kirjanpitosovellus/releases/tag/viikko7) 
 
 ## Konfigurointi
 
-Ohjelma ei vaadi konfigurointeja. Ohjelma luo uudet tiedostot hakemistoon, josta se suoritettiin. 
+Ohjelma ei vaadi konfigurointeja. Ohjelma luo uudet tiedostot hakemistoon, josta se suoritettiin. Luo käyttöliittymässä ensin uusi tilikausi ja lisää sinne kirjauksia, jotta voi koittaa olemassa olevan tilikauden avaamista.
 
 ## Ohjelman käynnistäminen
 
