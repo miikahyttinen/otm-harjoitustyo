@@ -31,27 +31,27 @@ Klikkaamalla "uusi tilikausi" voi luoda uuden tilikauden. Anna haluamasi nimi se
 
 Klikkaamalla "avaa tilikausi" avautuu tiedoston valintaikkuna, josta voit avata haluamasi tiedoston.
 
-(https://github.com/miikahyttinen/Otm-harjoitustyo-Yksinkertainen-kirjanpitosovellus/blob/master/dokumentaatio/gui%20pics/file%20chooser.png "Tilikauden avaus")
+![alt text](https://github.com/miikahyttinen/Otm-harjoitustyo-Yksinkertainen-kirjanpitosovellus/blob/master/dokumentaatio/gui%20pics/file%20chooser.png "Tilikauden avaus")
 
 ## Tilikauden listausnäkymä
 
 Näkymä listaa kaikki tiliakauden kirjaukset ja laskee tilikauden tuloksen. Voit myöt lisätä ja poistaa kirjauksen tästä näkymäst. 
 
-(https://github.com/miikahyttinen/Otm-harjoitustyo-Yksinkertainen-kirjanpitosovellus/blob/master/dokumentaatio/gui%20pics/show%20accounting%20year.png "Listausnäkymä")
+![alt text](https://github.com/miikahyttinen/Otm-harjoitustyo-Yksinkertainen-kirjanpitosovellus/blob/master/dokumentaatio/gui%20pics/show%20accounting%20year.png "Listausnäkymä")
 
 ## Uuden kirjauksen tekeminen
 
 Kun tilikausi on avattu tai uusi luotu, voi tehdä kirjauksia klikkaamalla uusi kirjaus. Ohjelma kirjoitta uuden 
 kirjauksen suoraan tiedostoon.
 
-(https://github.com/miikahyttinen/Otm-harjoitustyo-Yksinkertainen-kirjanpitosovellus/blob/master/dokumentaatio/gui%20pics/new%20entry.png "Uuden kirjauksen teko"
+![alt text](https://github.com/miikahyttinen/Otm-harjoitustyo-Yksinkertainen-kirjanpitosovellus/blob/master/dokumentaatio/gui%20pics/new%20entry.png "Uuden kirjauksen teko"
 
 ## Kirjauksen poisto
 
 Tilikauden listausnäkymästä voit poistaa kirjauksen. Anna kirjauksen numero (ID), jonka haluat poistaa.
 ID:t näet listausnäkymäst. 
 
-(https://github.com/miikahyttinen/Otm-harjoitustyo-Yksinkertainen-kirjanpitosovellus/blob/master/dokumentaatio/gui%20pics/remove%20entry.png "Kirjauksen poisto")
+![alt text](https://github.com/miikahyttinen/Otm-harjoitustyo-Yksinkertainen-kirjanpitosovellus/blob/master/dokumentaatio/gui%20pics/remove%20entry.png "Kirjauksen poisto")
 
 
 
