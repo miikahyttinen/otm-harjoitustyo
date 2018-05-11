@@ -1,6 +1,6 @@
 # Käyttöohje 
 
-Lataa tiedosto sekä mallidata jos haluat [ykkirjanpitosovellus-1.0-SNAPSHOT.jar](https://github.com/miikahyttinen/Otm-harjoitustyo-Yksinkertainen-kirjanpitosovellus/releases/tag/viikko7) 
+Lataa tiedosto [ykkirjanpitosovellus-1.0-SNAPSHOT.jar](https://github.com/miikahyttinen/Otm-harjoitustyo-Yksinkertainen-kirjanpitosovellus/releases/tag/viikko7) 
 
 ## Konfigurointi
 
