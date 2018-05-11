@@ -8,7 +8,7 @@ Pakkaus _fi.ykkirjanpitohojelma.gui_ sisältää JavaFX:llä toteutetun käyttö
 
 Pakkaus _fi.ykkirjanpitohojelma.test_ sisältää luokkia testaavat metodit. 
 
-<img src="https://github.com/miikahyttinen/Otm-harjoitustyo-Yksinkertainen-kirjanpitosovellus/blob/master/dokumentaatio/architecture%20pics/pakkausrakenne.png" widht="500">
+<img src="https://github.com/miikahyttinen/Otm-harjoitustyo-Yksinkertainen-kirjanpitosovellus/blob/master/dokumentaatio/architecture%20pics/pakkausrakenne.png" widht="300">
 
 ## Käyttöliittymä
 
