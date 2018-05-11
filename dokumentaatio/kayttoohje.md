@@ -22,13 +22,13 @@ Sovelluksen alkunäkymässä voit avata tilikauden tai luoda uuden tilikauden. U
 
 ## Uuden tilikauden luominen
 
-Klikkaamalla "uusi tilikausi" voi luoda uuden tilikauden. Anna haluamasi nimi sekä päivämäärät muodossa DD.MM.YYYY.
+Klikkaamalla "uusi tilikausi" voi luoda uuden tilikauden. Anna haluamasi nimi (max 50 merkkiä) sekä päivämäärät muodossa DD.MM.YYYY.
 
 <img src="https://github.com/miikahyttinen/Otm-harjoitustyo-Yksinkertainen-kirjanpitosovellus/blob/master/dokumentaatio/gui%20pics/create%20a%20new%20accounting%20year.png" width="500">
 
 ## Olemassa olevan tilikauden avaaminen
 
-Klikkaamalla "avaa tilikausi" avautuu tiedoston valintaikkuna, josta voit avata haluamasi tiedoston.
+Klikkaamalla "avaa tilikausi" avautuu tiedoston valintaikkuna, josta voit avata haluamasi tiedoston. Huom tiedoston pitää olla .csv -päätteinen ja datan täytyy olla oikeassa muodossa. Luo ensin tilikausi ja siihen kirjauksia.
 
 <img src="https://github.com/miikahyttinen/Otm-harjoitustyo-Yksinkertainen-kirjanpitosovellus/blob/master/dokumentaatio/gui%20pics/file%20chooser.png" width="500">
 
@@ -48,7 +48,7 @@ kirjauksen suoraan tiedostoon.
 ## Kirjauksen poisto
 
 Tilikauden listausnäkymästä voit poistaa kirjauksen. Anna kirjauksen numero (ID), jonka haluat poistaa.
-ID:t näet listausnäkymäst. 
+ID:t näet listausnäkymästä. 
 
 <img src="https://github.com/miikahyttinen/Otm-harjoitustyo-Yksinkertainen-kirjanpitosovellus/blob/master/dokumentaatio/gui%20pics/remove%20entry.png" width="300">
 
