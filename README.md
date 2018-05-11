@@ -53,3 +53,11 @@ Tiedostoon [checkstyle.xml](https://github.com/miikahyttinen/otm-harjoitustyo/bl
 
 Mahdolliset virheilmoitukset selviävät avaamalla selaimella tiedosto _target/site/checkstyle.html_
 
+### JavaDoc
+
+Javadoc generoidaan komennolla
+
+```
+ mvn javadoc:javadoc
+```
+
