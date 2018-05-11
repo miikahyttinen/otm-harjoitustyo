@@ -18,9 +18,14 @@ import javafx.scene.layout.GridPane;
 import javafx.geometry.Pos;
 import javafx.geometry.Insets;
 
+/**
+ *In this class, graphic user interface is set. 
+ *
+ */
 
 
 public class AccountingInterface extends Application {
+    
 
     @Override
     public void start(Stage window) {
@@ -49,6 +54,13 @@ public class AccountingInterface extends Application {
 
     }
     
+    /**
+    *Method opens a file chooser.
+    * 
+    *@param window Stage where the user is coming from.
+    * 
+    */
+    
     public void fileChooser(Stage window) {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Resource File");
@@ -57,7 +69,13 @@ public class AccountingInterface extends Application {
         showAccountingYear(fileName);
         
     }
-    
+
+    /**
+    *Method shows accounting year that user choosed.
+    * 
+    *@param file Name of the file as string
+    * 
+    */    
     
     public void showAccountingYear(String file) {
         Stage showYearWindow = new Stage();
@@ -99,6 +117,11 @@ public class AccountingInterface extends Application {
         showYearWindow.setScene(entryScene);
         showYearWindow.show();
     }
+    
+    /**
+    *Method sets a form where user can create a new entry.
+    * 
+    */   
     
     public void newAccountingYear() {       
         Stage newYearWindow = new Stage();
@@ -186,6 +209,14 @@ public class AccountingInterface extends Application {
         
     }
     
+    /**
+    *Method sets a window where user can give an ID of an entry and delete the entry.
+    * 
+    *@param file Name of the file as string
+    *
+    *@param showYearWindow Stage where user clicked button.
+    */   
+    
     public void deleteEntry(String file, Stage showYearWindow) {
         Stage deleteEntryWindow = new Stage();
         deleteEntryWindow.setTitle("Poista kirjaus tilikaudelta: " + file);
@@ -247,6 +278,14 @@ public class AccountingInterface extends Application {
         deleteEntryWindow.setScene(newEntryScene);        
         deleteEntryWindow.show();
     }
+    
+    /**
+    *Method sets a form where user can create a new entry.
+    * 
+    *@param file Name of the file as string
+    *
+    *@param showYearWindow Stage where user clicked button.
+    */   
     
     public void newEntry(String file, Stage showYearWindow) {
         Stage newEntryWindow = new Stage();

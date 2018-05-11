@@ -8,15 +8,22 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
+
 /**
+ *This class handles excpetion thrown because of the wrong user inputs.
  *
- * @author yllapitaja
  */
 public class UserInputErrors {
     
     public UserInputErrors() {
         
     }
+    
+    /**
+    *Method opens a new window when user gives a false input. 
+    *
+    *@param e IllegalArgumentException
+    */   
     
     public static void userInputError(IllegalArgumentException e) {
         Stage errorWindow = new Stage();

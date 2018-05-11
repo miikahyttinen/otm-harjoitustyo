@@ -58,7 +58,7 @@ public class AccountingYear {
         return this.enddate;
     }
     
-    public ArrayList<Entry> getEntries () {
+    public ArrayList<Entry> getEntries() {
         return this.entries;
     }
 
@@ -106,15 +106,15 @@ public class AccountingYear {
     *
     */
     
-    public void removeEntry(int id){
-        for(Entry e : this.entries) {
+    public void removeEntry(int id) {
+        for (Entry e : this.entries) {
             if (e.getId() == id) {
-                this.entries.remove(id-1);
+                this.entries.remove(id - 1);
                 break;
             }
         }
-        for(int i = 1; i<=this.entries.size(); i++) {
-            Entry e = this.entries.get(i-1);
+        for (int i = 1; i <= this.entries.size(); i++) {
+            Entry e = this.entries.get(i - 1);
             e.setId(i);
         }
     }

@@ -19,6 +19,8 @@ public class AccountingYearTest {
     
     AccountingYear testyear;
     AccountingYear testyear2;
+    AccountingYear csvTestYear1;
+    AccountingYear csvTestYear2;
     Entry testentry1;
     Entry testentry2;
     Entry testentry3;
@@ -43,8 +45,12 @@ public class AccountingYearTest {
         testentry3 = new Entry("Testikirjaus", date3 , 350, "Rental income");
         testyear.addEntry(testentry3);
         testyear2 = new AccountingYear("Testimiehen tilikausi");
-        testyear2.addEntry(testentry1);
-;
+        testyear2.addEntry(testentry1);       
+        csvTestYear1 = new AccountingYear("test");
+        csvTestYear1.setStartDate(startdate);
+        csvTestYear1.setEndDate(enddate);
+        csvTestYear1.addEntry(testentry1);
+        csvTestYear1.addEntry(testentry2);
     }
     
     @Test
@@ -61,30 +67,97 @@ public class AccountingYearTest {
     }
 
     @Test
-    public void csvReadWorks() {
-        //Data in test.csv: ID: 1; Name: Testikirjaus; Date: 1.1.2018; Amount: 300; Type: Tulo;
-        AccountingYear testYearCsv = new AccountingYear("Testivuosi");
+    public void csvReadAndWriteWorks() {
+        //Data to bw wirtten to test.csv: ID: 1; Name: Testikirjaus; Date: 1.1.2018; Amount: 300; Type: Income;
         try {
-        testYearCsv = AccountingData.readCsvFile("test.csv");
+        AccountingData.writeNewCsvFile(csvTestYear1);
         } catch (FileNotFoundException e) {
             System.out.println("Tiedostoa ei löydy");
         } catch (IOException e) {
             System.out.println("IO Exception");
         }
         
-        assertEquals(testYearCsv.getEntry(1).getAmount(), 300);
+        try {
+        csvTestYear2 = AccountingData.readCsvFile("test.csv");
+        } catch (FileNotFoundException e) {
+            System.out.println("Tiedostoa ei löydy");
+        } catch (IOException e) {
+            System.out.println("IO Exception");
+        }
+        
+        assertEquals(csvTestYear2.getEntry(1).getAmount(), 300);
+        
+        try {
+        AccountingData.removeEntryCsvFile(2, "test.csv");
+        } catch (FileNotFoundException e) {
+            System.out.println("Tiedostoa ei löydy");
+        } catch (IOException e) {
+            System.out.println("IO Exception");
+        }
+        
+        try {
+        csvTestYear2 = AccountingData.readCsvFile("test.csv");
+        } catch (FileNotFoundException e) {
+            System.out.println("Tiedostoa ei löydy");
+        } catch (IOException e) {
+            System.out.println("IO Exception");
+        }
+        int size = csvTestYear2.getEntries().size();
+        assertEquals(size, 1);
+        
     }
-        @Test
+    
+    @Test
     public void allEntriesToStringWorks() {
         String test2 = " ID: "  + "1" + " Nimi: " + "Testikirjaus" +
         " Pvm: " + "1.2.2018" + " Summa: " + "300" + " Tyyppi: " + "Income";
         assertEquals(test2, testyear2.allEntriesToString()[0]);
     }
     
+    
     @Test
     public void validateStringDateWorks() {
-        String date = "12.02.2018";
+        String date = "11.11.2018";
         boolean result = AccountingValidators.validateStringDate(date);
         assertEquals(true, result);
+    }
+    
+    @Test
+    public void validateYearIdWorks() {
+        boolean result = AccountingValidators.validateYearId(testyear, 1);
+        assertEquals(true, result);
+    }
+    
+    @Test
+    public void removeEntryWorks() {
+        testyear.removeEntry(2);
+        boolean result = AccountingValidators.validateYearId(testyear, 2);
+        assertEquals(true, result);
+    }
+    
+    @Test
+    public void validateStringNameWorks() {
+        boolean result = AccountingValidators.validateStringName("This is under 50 char");
+        assertEquals(true, result);
+    }
+    
+    @Test
+    public void dateToStringWorks() {
+        String testDate = testyear.getEntry(1).dateToString();
+        String comapreDate = "1.2.2018";
+        assertEquals(comapreDate, testDate);
+    }
+    
+    @Test
+    public void validateStringIdWorks() {
+        int idTest = AccountingValidators.validateStringId("1");
+        assertEquals(1, idTest);
+    }
+    
+    @Test
+    public void countSumOfTheYearWorks() {
+        int sumTest = testyear.countSumOfTheYear();
+        assertEquals(sumTest, 450);
+        
     }
 }

@@ -22,7 +22,6 @@ public class Entry {
         this.type = type;
     }
     
-    //Setters   
     
     public void setId(int id) {
         this.id = id;
@@ -45,7 +44,6 @@ public class Entry {
         this.type = type;
     }
     
-    //Getters
     
     public int getId() {
         return this.id;

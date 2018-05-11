@@ -8,6 +8,7 @@ import java.io.FileReader;
 import java.util.Scanner;
 import java.io.IOException;
 import java.lang.IllegalArgumentException;
+
 /**
  *Class writes and reads accounting data from and to CSV-files.
  *
@@ -24,6 +25,8 @@ public class AccountingData {
     *@param year AccountingYear named with user's input when creating a new accounting year. 
     * 
     *@return Returns name of the file.
+    * 
+    *@throws FileNotFoundException if file is not in the direcotry where program was run.
     */
     
     public static String writeNewCsvFile(AccountingYear year) throws FileNotFoundException {       
@@ -38,6 +41,8 @@ public class AccountingData {
     *Method writes to an exsisitng CSV-file.
     *
     *@param year AccountingYear which is under processing f.ex. when adding a new entry. 
+    * 
+    *@throws FileNotFoundException if fiel is not in the direcotry where program was run.
     */
     
     public static void  writeExsistingCsvFile(AccountingYear year) throws FileNotFoundException {       
@@ -50,8 +55,12 @@ public class AccountingData {
     *Method deletes an entry from CSV file and rewrites it.
     *
     *@param fileName Name of the CSV-file.
+    *
     *@param id Integer, id of the entry wished to be removed.
     * 
+    *@throws FileNotFoundException if file is not in the direcotry where program was run.
+    *@throws IOException if I/O fails
+    *@throws IllegalArgumentException if user input is not valid. 
     */
 
     
@@ -69,11 +78,14 @@ public class AccountingData {
     *@param fileName Name of the CSV-file which user chooses with a file chooser(GUI).
     * 
     *@return AccountingYear readed from CSV-file.  
+    * 
+    *@throws FileNotFoundException if file is not in the direcotry where program was run.
+    *@throws IOException if I/O fails
     */
             
     public static AccountingYear readCsvFile(String fileName) throws FileNotFoundException, IOException {
         
-	BufferedReader reader = new BufferedReader(new FileReader(fileName));
+		BufferedReader reader = new BufferedReader(new FileReader(fileName));
         String line = null;
         Scanner scanner = null;
 		int index = 0;
