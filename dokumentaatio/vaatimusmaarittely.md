@@ -24,7 +24,7 @@ Sovellukseen on tarkoitus tulla:
 * Uuden tilikauden luontinäkymnä
 
 
-## 0.1 Version tarjoama toiminallisuus
+## 1.0 Version tarjoama toiminallisuus
 
 ### Sovelluksen toiminallisuus
 * käyttäjä voi luoda uuden "tilikauden"
@@ -35,7 +35,7 @@ Sovellukseen on tarkoitus tulla:
 * käyttäjä voi poistaa tuloja ja menoja
 
 ## Jatkokehitys
-* Tallennus ominaisuus (ei kirjoiteta samalla kun ohjelmaa käytetään)
+* Tallennusominaisuus (ei kirjoiteta tiedostoja samalla kun ohjelmaa käytetään vain vasta tallennus vaiheessa)
 * Integraatio Google Sheetsien kanssa
 * Tietojen tallettaminen tietokantaan
 * Tulojen ja menojen muokkaaminen
