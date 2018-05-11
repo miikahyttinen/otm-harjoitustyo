@@ -1,4 +1,4 @@
-# Käyttöohje (luonnos)
+# Käyttöohje 
 
 Lataa tiedosto sekä mallidata jos haluat [ykkirjanpitosovellus-1.0-SNAPSHOT.jar](https://github.com/miikahyttinen/Otm-harjoitustyo-Yksinkertainen-kirjanpitosovellus/releases/tag/viikko6)
 
@@ -30,7 +30,7 @@ Klikkaamalla "uusi tilikausi" voi luoda uuden tilikauden. Anna haluamasi nimi se
 
 Klikkaamalla "avaa tilikausi" avautuu tiedoston valintaikkuna, josta voit avata haluamasi tiedoston.
 
-<img src="https://github.com/miikahyttinen/Otm-harjoitustyo-Yksinkertainen-kirjanpitosovellus/blob/master/dokumentaatio/gui%20pics/file%20chooser.png width="500">
+<img src="https://github.com/miikahyttinen/Otm-harjoitustyo-Yksinkertainen-kirjanpitosovellus/blob/master/dokumentaatio/gui%20pics/file%20chooser.png" width="500">
 
 ## Tilikauden listausnäkymä
 
