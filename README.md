@@ -11,6 +11,7 @@ Harjoitustyö kurssille Ohjelmistotekniikan menetelmät. Sovelluksella voi toteu
 
 * [Käyttöohje](https://github.com/miikahyttinen/Otm-harjoitustyo-Yksinkertainen-kirjanpitosovellus/blob/master/dokumentaatio/kayttoohje.md)
 
+* [Testausdokumentti](https://github.com/miikahyttinen/Otm-harjoitustyo-Yksinkertainen-kirjanpitosovellus/blob/master/dokumentaatio/testausdokumentti.md)
 
 * [Työaikakirjanpito](https://github.com/miikahyttinen/otm-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
 
