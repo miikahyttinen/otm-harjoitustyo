@@ -7,24 +7,22 @@ Tällainen elinkeinonharjoittaja, voi olla esimerkiksi valokuvaaja, graafikko, k
 Lisää yksinkertaisesta kirjanpidosta voi lukea [tästä](https://fi.wikipedia.org/wiki/Yhdenkertainen_kirjanpito)
 
 Sovelluksen tarjoamat hyödyt:
-* Kirjanpitoon käytettävän ajan puolitus
-* Tulot ja menot ryhmitellään jo kirjanpitovaiheessa veroilmoituksen vaatimalla tavalla
-* Veroilmoituksen täyttäminen alle viidessä minuutissa
+* Kättäjä voi listata tuloja ja menoja graafisessa käyttöliittymässä
+* Ohjelma laskee kirjausten tuloksen (summaa yhteen)
 * Tulojen ja menojen tarkastelu
-* EXTRA: CSV export (jos aikaa)
+* Ohjelma tallentaa kirjauksia suoraan CSV-tiedostoon
 
-## Sovelluksen tarkoitus
+## Sovelluksen käyttäjät
 
-Aluksi sovelluksella on vain normaalikäyttäjiä, joita voi olla monta. Siihen on mahdollista lisätä myös 
-kirjanpitäjä tulevaisuudessa. Myös Admin on mahdollista lisätä tulevaisuudessa.
+Sovellusta voi käyttää työaseman omistaja, jolla oikeus suorittaa ohjelmia sekä kirjoittaa tiedostoja ohjelman sijaintihakemistossa.
 
 ## Käyttöliittymä
 
 Sovellukseen on tarkoitus tulla:
 * Aloitus-näkymä: valitse uusi tilikausi tai avaa tilikausi tiedostosta
-* Tulojen ja menojen lisäys -näkymä
-* Tulojen ja menojen listaus -näkymä
-* Veroilmoitus -näkymä
+* Avattu tilikausi, jossa voi lisätä ja poistaa kirjauksia (omat näkymät näille)
+* Uuden tilikauden luontinäkymnä
+
 
 ## 0.1 Version tarjoama toiminallisuus
 
@@ -33,15 +31,16 @@ Sovellukseen on tarkoitus tulla:
 * käyttäjä voi avata tilikauden tiedostosta
 * käyttäjä voi lisätä tuloja ja menoja
 * käyttäjä voi tarkastella tuloja ja menoja -listaa
-* käyttäjä voi tarkastella veroilmoitukselle meneviä tietoja
+* Sovellus laskee tuloksen
 * käyttäjä voi poistaa tuloja ja menoja
-* Käyttäjä voi tallentaa tallentaa tiliakauden tiedostoon
 
 ## Jatkokehitys
-* Matkalaskujen teko
-* PDF tai CSV-export
+* Tallennus ominaisuus (ei kirjoiteta samalla kun ohjelmaa käytetään)
+* Integraatio Google Sheetsien kanssa
+* Tietojen tallettaminen tietokantaan
 * Tulojen ja menojen muokkaaminen
-* Kaksinkertainen kirjanpito (huomattavasti haastavampi)
+* Tällä hetkellä sovellus tukee vain kokonaislukuja..
+
 
 
 
