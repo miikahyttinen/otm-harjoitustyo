@@ -36,7 +36,7 @@ Klikkaamalla "avaa tilikausi" avautuu tiedoston valintaikkuna, josta voit avata 
 
 Näkymä listaa kaikki tiliakauden kirjaukset ja laskee tilikauden tuloksen. Voit myöt lisätä ja poistaa kirjauksen tästä näkymäst. 
 
-<img src="https://github.com/miikahyttinen/Otm-harjoitustyo-Yksinkertainen-kirjanpitosovellus/blob/master/dokumentaatio/gui%20pics/show%20accounting%20year.png" width="500">
+<img src="https://github.com/miikahyttinen/Otm-harjoitustyo-Yksinkertainen-kirjanpitosovellus/blob/master/dokumentaatio/gui%20pics/show%20accounting%20year.png" width="400">
 
 ## Uuden kirjauksen tekeminen
 
@@ -50,7 +50,7 @@ kirjauksen suoraan tiedostoon.
 Tilikauden listausnäkymästä voit poistaa kirjauksen. Anna kirjauksen numero (ID), jonka haluat poistaa.
 ID:t näet listausnäkymäst. 
 
-<img src="https://github.com/miikahyttinen/Otm-harjoitustyo-Yksinkertainen-kirjanpitosovellus/blob/master/dokumentaatio/gui%20pics/remove%20entry.png" width="500">
+<img src="https://github.com/miikahyttinen/Otm-harjoitustyo-Yksinkertainen-kirjanpitosovellus/blob/master/dokumentaatio/gui%20pics/remove%20entry.png" width="400">
 
 
 
