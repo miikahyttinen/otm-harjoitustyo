@@ -24,34 +24,33 @@ Sovelluksen alkunäkymässä voit avata tilikauden tai luoda uuden tilikauden. U
 
 Klikkaamalla "uusi tilikausi" voi luoda uuden tilikauden. Anna haluamasi nimi sekä päivämäärät muodossa DD.MM.YYYY.
 
-(https://github.com/miikahyttinen/Otm-harjoitustyo-Yksinkertainen-kirjanpitosovellus/blob/master/dokumentaatio/gui%20pics/create%20a%20new%20accounting%20year.png "Uusi tilikausi")
-
+<img src="https://github.com/miikahyttinen/Otm-harjoitustyo-Yksinkertainen-kirjanpitosovellus/blob/master/dokumentaatio/gui%20pics/create%20a%20new%20accounting%20year.png" width="500">
 
 ## Olemassa olevan tilikauden avaaminen
 
 Klikkaamalla "avaa tilikausi" avautuu tiedoston valintaikkuna, josta voit avata haluamasi tiedoston.
 
-![alt text](https://github.com/miikahyttinen/Otm-harjoitustyo-Yksinkertainen-kirjanpitosovellus/blob/master/dokumentaatio/gui%20pics/file%20chooser.png "Tilikauden avaus")
+<img src="https://github.com/miikahyttinen/Otm-harjoitustyo-Yksinkertainen-kirjanpitosovellus/blob/master/dokumentaatio/gui%20pics/file%20chooser.png width="500">
 
 ## Tilikauden listausnäkymä
 
 Näkymä listaa kaikki tiliakauden kirjaukset ja laskee tilikauden tuloksen. Voit myöt lisätä ja poistaa kirjauksen tästä näkymäst. 
 
-![alt text](https://github.com/miikahyttinen/Otm-harjoitustyo-Yksinkertainen-kirjanpitosovellus/blob/master/dokumentaatio/gui%20pics/show%20accounting%20year.png "Listausnäkymä")
+<img src="https://github.com/miikahyttinen/Otm-harjoitustyo-Yksinkertainen-kirjanpitosovellus/blob/master/dokumentaatio/gui%20pics/show%20accounting%20year.png" width="500">
 
 ## Uuden kirjauksen tekeminen
 
 Kun tilikausi on avattu tai uusi luotu, voi tehdä kirjauksia klikkaamalla uusi kirjaus. Ohjelma kirjoitta uuden 
 kirjauksen suoraan tiedostoon.
 
-![alt text](https://github.com/miikahyttinen/Otm-harjoitustyo-Yksinkertainen-kirjanpitosovellus/blob/master/dokumentaatio/gui%20pics/new%20entry.png "Uuden kirjauksen teko"
+<img src="https://github.com/miikahyttinen/Otm-harjoitustyo-Yksinkertainen-kirjanpitosovellus/blob/master/dokumentaatio/gui%20pics/new%20entry.png" width="500">
 
 ## Kirjauksen poisto
 
 Tilikauden listausnäkymästä voit poistaa kirjauksen. Anna kirjauksen numero (ID), jonka haluat poistaa.
 ID:t näet listausnäkymäst. 
 
-![alt text](https://github.com/miikahyttinen/Otm-harjoitustyo-Yksinkertainen-kirjanpitosovellus/blob/master/dokumentaatio/gui%20pics/remove%20entry.png "Kirjauksen poisto")
+<img src="https://github.com/miikahyttinen/Otm-harjoitustyo-Yksinkertainen-kirjanpitosovellus/blob/master/dokumentaatio/gui%20pics/remove%20entry.png" width="500">
 
 
 
