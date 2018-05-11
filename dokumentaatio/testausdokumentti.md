@@ -5,11 +5,11 @@ että tiedostojen kirjoitus tapahtuu oikein.
 
 ## Yksikkö- ja integraatiotestaus
 
-### sovelluslogiikka
+### Sovelluslogiikka
 
 Automatisoidut testit testaavat kaikkia luokkia pois lukien käyttöliittymän rakentavat luokat. 
 
-### CSV-tiedoston luku kirjoitus
+### CSV-tiedoston luku ja kirjoitus
 
 Tiedostojen lukua ja kirjoitusta testataan luomalla vakiodatan sisältävä *test.csv* -tiedosto, johon kirjoitetaan sekä luetaan.
 Testi ylikirjoittaa olemassa olevan *test.csv* -tiedoston jos se on olemassa.
