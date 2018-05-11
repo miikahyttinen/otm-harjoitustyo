@@ -50,7 +50,7 @@ kirjauksen suoraan tiedostoon.
 Tilikauden listausnäkymästä voit poistaa kirjauksen. Anna kirjauksen numero (ID), jonka haluat poistaa.
 ID:t näet listausnäkymäst. 
 
-<img src="https://github.com/miikahyttinen/Otm-harjoitustyo-Yksinkertainen-kirjanpitosovellus/blob/master/dokumentaatio/gui%20pics/remove%20entry.png" width="400">
+<img src="https://github.com/miikahyttinen/Otm-harjoitustyo-Yksinkertainen-kirjanpitosovellus/blob/master/dokumentaatio/gui%20pics/remove%20entry.png" width="300">
 
 
 
