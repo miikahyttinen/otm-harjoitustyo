@@ -14,6 +14,6 @@ Päivämäärä | Aika(h) | Mitä tehty
 2.5.2018| 3 | Käyttöohjeen teko, testien lisäys, repon päivitys
 10.5.2018| 5 | Kirjauksen poistamisen toteutus, bugien korjaus, validaattorien teko
 10.5.2018| 7 | Loppupalautuksen viimeistely, testien teko loppuun, dokumentaation viimeistely, testausdokumentin kirjoitus
-__TOTAL__ | 44 | Tilanne 11.5.2018 
+__TOTAL__ | 46 | Tilanne 11.5.2018 
 
  
