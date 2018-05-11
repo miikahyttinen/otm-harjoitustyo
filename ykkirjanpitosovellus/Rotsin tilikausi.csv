@@ -1,25 +1,19 @@
-1;Testikirjaus;1.1.2018;300;Tulo
-2;Testikirjaus;19.1.2018;1230;Tulo
-3;Testikirjaus;20.1.2018;-456;Kulu
-4;Testikirjaus;3.2.2018;-200;Kulu
-5;Testikirjaus;3.2.2018;235;Tulo
-6;Testikirjaus;14.2.2018;350;Vuokratulo
-7;Testikirjaus;15.2.2018;-400;Kulu
-8;Testikirjaus;18.2.2018;400;Vuokratulo
-9;Testikirjaus;22.2.2018;43;Tulo
-10;Testikirjaus;23.2.2018;567;Tulo
-11;Testikirjaus;24.2.2018;23;Tulo
-12;Testikirjaus;25.2.2018;456;Tulo
-13;Testikirjaus;16.3.2018;200;Vuokratulo
-14;Testikirjaus;26.3.2018;12;Tulo
-15;Testikirjaus;3.4.2018;-23;Kulu
-16;Testikirjaus;17.4.2018;400;Vuokratulo
-17;Keikkapalkkio;12.5.2018;243;Tulo
-18;Kirjaus taas;12.3.2018;243;Meno
-19;Vuokra;15.6.2018;124;Auton vuokra
-20;Mazzia;23.5.2018;543;Työt
-21;Pizzatoimitus;4.4.2018;453;Myynti
-22;Wappukeikka;1.5.2018;400;Tulo
-23;Freelanger tulo;14.5.2018;450;Geikkapalkka
-24;Freelanger keikka;5.4.2018;430;Tulo
-25;Wappugigi;1.5.2018;600;Tulo
+1;Testikirjaus;3.2.2018;-200;Kulu
+2;Testikirjaus;14.2.2018;350;Vuokratulo
+3;Testikirjaus;15.2.2018;-400;Kulu
+4;Testikirjaus;18.2.2018;400;Vuokratulo
+5;Testikirjaus;22.2.2018;43;Tulo
+6;Testikirjaus;23.2.2018;567;Tulo
+7;Testikirjaus;24.2.2018;23;Tulo
+8;Testikirjaus;25.2.2018;456;Tulo
+9;Testikirjaus;16.3.2018;200;Vuokratulo
+10;Testikirjaus;26.3.2018;12;Tulo
+11;Testikirjaus;3.4.2018;-23;Kulu
+12;Testikirjaus;17.4.2018;400;Vuokratulo
+13;Keikkapalkkio;12.5.2018;243;Tulo
+14;Kirjaus taas;12.3.2018;243;Meno
+15;Vuokra;15.6.2018;124;Auton vuokra
+16;Mazzia;23.5.2018;543;Työt
+17;Pizzatoimitus;4.4.2018;453;Myynti
+18;Wappukeikka;1.5.2018;400;Tulo
+19;Freelanger keikka;5.4.2018;430;Tulo

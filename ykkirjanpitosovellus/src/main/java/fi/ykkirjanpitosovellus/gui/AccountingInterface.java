@@ -77,8 +77,16 @@ public class AccountingInterface extends Application {
             public void handle(ActionEvent event) {
                 newEntry(file, showYearWindow);               
             }
-        });   
+        }); 
+        Button deleteEntryButton = new Button("Poista kirjaus");
+        deleteEntryButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                deleteEntry(file, showYearWindow);               
+            }
+        });         
         componentsEntry.getChildren().add(newEntryButton);
+        componentsEntry.getChildren().add(deleteEntryButton);
         String[] allEntries = year.allEntriesToString();
         for (String s : allEntries) {
             Label label = new Label(s);
@@ -176,6 +184,68 @@ public class AccountingInterface extends Application {
         newYearWindow.show();
         
         
+    }
+    
+    public void deleteEntry(String file, Stage showYearWindow) {
+        Stage deleteEntryWindow = new Stage();
+        deleteEntryWindow.setTitle("Poista kirjaus tilikaudelta: " + file);
+        
+        GridPane deleteEntryComponents = new GridPane();
+        deleteEntryComponents.setAlignment(Pos.BASELINE_LEFT);
+        deleteEntryComponents.setHgap(10);
+        deleteEntryComponents.setVgap(10);
+        deleteEntryComponents.setPadding(new Insets(25, 25, 25, 25));
+        
+        Label labelId = new Label("Anna poistettavan kirjauksen ID");
+        TextField idField = new TextField();     
+        deleteEntryComponents.add(labelId, 0, 1);
+        deleteEntryComponents.add(idField, 0, 2);
+        
+        Button deleteEntryButton = new Button("Poista kirjaus");
+        deleteEntryComponents.add(deleteEntryButton, 1, 2);
+        deleteEntryButton.setOnAction(new EventHandler<ActionEvent>() {
+            
+            @Override
+            public void handle(ActionEvent event) {
+                AccountingYear year = new AccountingYear(file);
+                try {
+                    year = AccountingData.readCsvFile(file);
+                } catch (FileNotFoundException e) {
+                    System.out.println("Tiedostoa ei löydy");
+                } catch (IOException e) {
+                    System.out.println("IO Exception");
+                }
+                int id = 0; 
+                try {
+                    id = AccountingValidators.validateStringId(idField.getText());               
+                } catch (NumberFormatException e) {
+                    UserInputErrors.userInputError(e);
+                }
+                try {
+                    AccountingValidators.validateYearId(year, id);               
+                } catch (IllegalArgumentException e) {
+                    UserInputErrors.userInputError(e);
+                }
+                year.removeEntry(id);
+                
+                try {
+                    AccountingData.writeExsistingCsvFile(year);
+                } catch (FileNotFoundException e) {
+                    System.out.println("Tiedostoa ei löydy");
+                } catch (IOException e) {
+                    System.out.println("IO Exception");
+                }
+                showAccountingYear(file);
+                deleteEntryWindow.close();
+                showYearWindow.close();
+            }
+        
+            
+        });
+    
+        Scene newEntryScene = new Scene(deleteEntryComponents);
+        deleteEntryWindow.setScene(newEntryScene);        
+        deleteEntryWindow.show();
     }
     
     public void newEntry(String file, Stage showYearWindow) {

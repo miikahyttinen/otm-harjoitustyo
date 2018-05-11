@@ -7,6 +7,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.Scanner;
 import java.io.IOException;
+import java.lang.IllegalArgumentException;
 /**
  *Class writes and reads accounting data from and to CSV-files.
  *
@@ -43,6 +44,23 @@ public class AccountingData {
         PrintWriter pw = new PrintWriter(new File(year.getName()));
         pw.write(AccountingAlgorithms.csvToString(year));
         pw.close();
+    }
+    
+    /**
+    *Method deletes an entry from CSV file and rewrites it.
+    *
+    *@param fileName Name of the CSV-file.
+    *@param id Integer, id of the entry wished to be removed.
+    * 
+    */
+
+    
+    public static void removeEntryCsvFile(int id, String fileName) throws FileNotFoundException, IOException, IllegalArgumentException {
+        AccountingYear year = readCsvFile(fileName);     
+        if (AccountingValidators.validateYearId(year, id)) {
+            year.removeEntry(id);
+            writeExsistingCsvFile(year);
+        }
     }
     
     /**
@@ -97,7 +115,6 @@ public class AccountingData {
     *@return dateArray int array where [0] = date, [1] = month, [2] = year.
     */
 
-    //Kirjoita javadoc lopouun
     public static int[] dateToIntArray(String dateString) {
         int[] dateArray = new int[3];
         dateArray[0] = Integer.parseInt(AccountingAlgorithms.parseDate(dateString)[0]);

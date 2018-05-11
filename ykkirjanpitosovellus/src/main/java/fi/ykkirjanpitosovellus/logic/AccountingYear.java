@@ -57,6 +57,10 @@ public class AccountingYear {
     public int[] getEndDate() {
         return this.enddate;
     }
+    
+    public ArrayList<Entry> getEntries () {
+        return this.entries;
+    }
 
     /**
     *Finds an entry by an id number from the accounting year
@@ -96,7 +100,27 @@ public class AccountingYear {
     }
     
     /**
-    *Iterates through the ArrayList "entries" and converts those string
+    *Removes an entry from AccoutningYear.  
+    * 
+    *@param id Id of the entry that wish to be removed. 
+    *
+    */
+    
+    public void removeEntry(int id){
+        for(Entry e : this.entries) {
+            if (e.getId() == id) {
+                this.entries.remove(id-1);
+                break;
+            }
+        }
+        for(int i = 1; i<=this.entries.size(); i++) {
+            Entry e = this.entries.get(i-1);
+            e.setId(i);
+        }
+    }
+    
+    /**
+    *Iterates through the ArrayList "entries" and converts those to string
     * 
     *@return Returns info of all entries of an accounting year as String array 
     *
@@ -128,5 +152,6 @@ public class AccountingYear {
     	}
         return sum;
     }
-            
 }
+    
+
