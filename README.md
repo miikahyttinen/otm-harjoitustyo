@@ -1,6 +1,6 @@
-# Yhdenkertainen kirjanpito-ohjelma
+# Yhdenkertainen kirjanpito-ohjelma (työpöytäsovellus)
 
-Harjoitustyö kurssille Ohjelmistotekniikan menetelmät. Sovelluksella voi toteuttaa kirjanpitolain määrittelemän yksinkertaisen kirjanpidon
+Harjoitustyö kurssille Ohjelmistotekniikan menetelmät. Ohjelmalla voi pitää kirjaa menoista ja tuloista. 
 
 ## Dokumentaatio
 
